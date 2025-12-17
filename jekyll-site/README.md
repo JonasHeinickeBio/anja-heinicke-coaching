@@ -23,7 +23,7 @@ jekyll-site/
 │   │   └── style.css        # Stylesheet
 │   └── images/              # Bilder und Fotos für die Website
 │       ├── README.md        # Anleitung zur Bildverwendung
-│       └── .gitkeep         # Ensures folder is tracked
+│       └── .gitkeep         # Stellt sicher, dass der Ordner verfolgt wird
 ├── index.md                 # Startseite (Hero, Angebot, Themen)
 ├── retreat.md               # Details zum 5-Tage Retreat in der Toskana
 ├── about.md                 # Über mich (Therapeutin, Supervisorin, Coach)

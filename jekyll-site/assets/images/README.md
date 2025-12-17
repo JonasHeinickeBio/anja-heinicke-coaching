@@ -65,6 +65,6 @@ Dann einbinden mit:
 ## Bildoptimierung
 
 Online-Tools zur Bildoptimierung:
-- [TinyPNG](https://tinypng.com/) - JPG/PNG Kompression
+- [TinyPNG](https://tinypng.com/) - JPG/PNG Komprimierung
 - [Squoosh](https://squoosh.app/) - Moderne Bildoptimierung
 - [ImageOptim](https://imageoptim.com/) - Desktop-Tool (Mac)
