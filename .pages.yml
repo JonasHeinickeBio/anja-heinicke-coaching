@@ -6,7 +6,7 @@ content:
   - name: pages
     label: Pages
     type: collection
-    path: jekyll-site
+    path: jekyll-site/pages
     format: yaml-frontmatter
     view:
       fields: [title, description]
