@@ -106,19 +106,18 @@ Wenn Gefühle wie Hilflosigkeit und „ich kann daran nichts ändern" vorherrsch
 
 ## Erfahrungsbericht
 
-<div class="testimonial" markdown="1">
+{% capture testimonial_content %}
+"Gern möchte ich meine positive Erfahrung des systemischen Coachings durch Anja Heinicke teilen. Ihre einfühlsame Begleitung und ihr systemischer Ansatz haben meinen Lernprozess sowohl im beruflichen als auch im privaten Bereich in beeindruckender Weise unterstützt.
 
-> "Gern möchte ich meine positive Erfahrung des systemischen Coachings durch Anja Heinicke teilen. Ihre einfühlsame Begleitung und ihr systemischer Ansatz haben meinen Lernprozess sowohl im beruflichen als auch im privaten Bereich in beeindruckender Weise unterstützt.
->
-> Durch ihre Empathie habe ich mich jederzeit verstanden gefühlt und ihr Blick auf komplexe Zusammenhänge hat mir ganz neue Perspektiven eröffnet. Durch unsere Zusammenarbeit konnte ich nicht nur praktische und alltagstaugliche Werkzeuge erlernen, sondern auch tiefere Selbsterkenntnis entwickeln.
->
-> Sie hat die Fähigkeit, einen offenen und unterstützenden Raum zu schaffen, der es mir ermöglichte, meine Gedanken und Gefühle sicher zu erkunden. Ihr Coaching hat mir geholfen, effektiver mit meinen Ressourcen umzugehen und meine persönlichen Ziele klarer zu definieren.
->
-> Ich bin überzeugt, dass dieser Ansatz vielen Menschen dabei helfen wird, positive Veränderungen in ihrem Leben zu initiieren."
->
-> <cite>– Ehemaliger Klient</cite>
+Durch ihre Empathie habe ich mich jederzeit verstanden gefühlt und ihr Blick auf komplexe Zusammenhänge hat mir ganz neue Perspektiven eröffnet. Durch unsere Zusammenarbeit konnte ich nicht nur praktische und alltagstaugliche Werkzeuge erlernen, sondern auch tiefere Selbsterkenntnis entwickeln.
 
-</div>
+Sie hat die Fähigkeit, einen offenen und unterstützenden Raum zu schaffen, der es mir ermöglichte, meine Gedanken und Gefühle sicher zu erkunden. Ihr Coaching hat mir geholfen, effektiver mit meinen Ressourcen umzugehen und meine persönlichen Ziele klarer zu definieren.
+
+Ich bin überzeugt, dass dieser Ansatz vielen Menschen dabei helfen wird, positive Veränderungen in ihrem Leben zu initiieren."
+{% endcapture %}
+
+{% include testimonial.html content=testimonial_content author="Ehemaliger Klient" %}
+
 </div>
 </section>
 

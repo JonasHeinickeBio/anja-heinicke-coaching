@@ -14,7 +14,7 @@ author:
 # Build settings
 markdown: kramdown
 kramdown:
-  input: GFM
+  input: Kramdown
   hard_wrap: false
   parse_block_html: true
 permalink: pretty
