@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: defaul
 title: "Finde Deinen Weg! Systemische Coaching Retreats in der Natur"
 description: "Systemische Coaching Retreats in der Natur - 5 Tage intensives Coaching in kleiner Gruppe"
 permalink: /
@@ -20,13 +20,13 @@ permalink: /
         <h2>Coaching Retreats in der Natur</h2>
         <div class="content-box">
             <p class="lead">Sie wissen nicht mehr, was Sie wollen und brauchen eine (Neu-)Ausrichtung?</p>
-            
+
             <p>In unseren Coaching Retreats in der Natur können Sie Ideen und Ansätze entwickeln, welche Wege Sie in Zukunft gehen möchten.</p>
-            
+
             <p>Die äußere Ruhe der Natur kann Ihnen helfen, auch Ihre innere Ruhe zu finden. Lassen Sie die friedliche Atmosphäre auf sich wirken und kommen Sie mit sich in tiefem, inneren Kontakt.</p>
-            
+
             <p>Die Schönheit der Natur kann Ihnen helfen, Ihre innere Schönheit zu erkennen und wertzuschätzen. Wie eine Perle, die versteckt ist und entdeckt werden muss.</p>
-            
+
             <p>Die Aufmerksamkeit auf die Einfachheit zu lenken, sie wertzuschätzen und tiefe Zufriedenheit darin zu finden, ist eine zentrale Ausrichtung dieses Coaching-Retreats.</p>
         </div>
     </div>
@@ -41,12 +41,12 @@ permalink: /
                     <h3>🏞️ Klein und Persönlich</h3>
                     <p>Wir halten die Gruppe bewusst klein (max. 4 Personen), um einen geschützten Raum zu schaffen und intensive Auseinandersetzung zu ermöglichen.</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>🧘 Natur als Therapeutin</h3>
                     <p>Jeden Tag besuchen wir unterschiedliche Orte in der Region. Die Schönheit und Vollkommenheit der Natur dient als Quelle der Inspiration und Kraftschöpfung.</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>🌱 Raum für Entfaltung</h3>
                     <p>Das Retreat ist bewusst mit Freiräumen gestaltet, damit sich individuelle Entwicklungen entfalten können. Bewegung in der Natur bringt Gedanken und Ideen in Bewegung.</p>
@@ -61,60 +61,60 @@ permalink: /
         <h2>Coaching Themen</h2>
         <div class="content-box">
             <p class="lead">Im systemischen Coaching können wir folgende Themen bearbeiten:</p>
-            
+
             <div class="retreat-details">
                 <div class="detail-item">
-                    <h3>Burnout & Prävention</h3>
+                    <h3>Burnout &amp; Prävention</h3>
                     <p>Erschöpfung erkennen, verstehen und vorbeugen</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Self-Care</h3>
                     <p>Selbstfürsorge lernen und im Alltag verankern</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Grenzen ziehen</h3>
                     <p>Persönliche Grenzen setzen und kommunizieren</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Selbstannahme</h3>
                     <p>Sich selbst annehmen, wie Sie sind</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Entscheidungsfindung</h3>
                     <p>Klarheit gewinnen für wichtige Entscheidungen</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Selbstwertgefühl</h3>
                     <p>Den eigenen Wert erkennen und stärken</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Selbstoptimierung hinterfragen</h3>
                     <p>Vom Optimierungsdruck zur Selbstakzeptanz</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Eigenverantwortung</h3>
                     <p>Selbstwirksamkeit und Handlungsfähigkeit stärken</p>
                 </div>
-                
+
                 <div class="detail-item">
                     <h3>Coping Strategien</h3>
                     <p>Bewältigungsstrategien für herausfordernde Zeiten</p>
                 </div>
             </div>
-            
+
             <h3>Spezifische Unterstützung</h3>
-            
+
             <p>Sich selbst vollkommen anzunehmen fällt vielen Menschen schwer. Oft hadern sie mit Entscheidungen oder nehmen sich als unzureichend wahr. Ich unterstütze Sie dabei, zu lernen, die Vergangenheit ruhen zu lassen und sich als wertvoll zu betrachten.</p>
-            
+
             <p>Wenn Gefühle wie Hilflosigkeit und „ich kann daran nichts ändern" vorherrschen, begleite ich Sie in dem Prozess, sich wieder als eine Person zu erleben, die die Fäden in der Hand hält und ihr Leben selbst steuert.</p>
-            
+
             <p><strong>Auf der Warteliste für Therapie?</strong> Ich begleite Sie durch Coping Strategien in dieser Zeit.</p>
         </div>
     </div>

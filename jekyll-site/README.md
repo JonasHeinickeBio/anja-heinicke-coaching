@@ -20,7 +20,7 @@ jekyll-site/
 │   └── default.html         # Grundlayout mit Navigation und Footer
 ├── assets/                  # Statische Assets
 │   ├── css/
-│   │   └── style.css        # Stylesheet
+│   │   └── style.css        # Styleshee
 │   └── images/              # Bilder und Fotos für die Website
 │       ├── README.md        # Anleitung zur Bildverwendung
 │       └── .gitkeep         # Stellt sicher, dass der Ordner verfolgt wird
@@ -37,7 +37,7 @@ Jede Markdown-Seite beginnt mit YAML Frontmatter:
 
 ```yaml
 ---
-layout: default
+layout: defaul
 title: "Seitentitel"
 description: "Seitenbeschreibung für SEO"
 permalink: /seite/
@@ -51,20 +51,20 @@ permalink: /seite/
 - **description**: Meta-Description für Suchmaschinen
 - **permalink**: URL-Pfad der Seite (z.B. `/retreat/`)
 
-## GitHub Pages Deployment
+## GitHub Pages Deploymen
 
 ### GitHub Actions (Empfohlen) ✅
 
 Die Site verwendet zwei GitHub Actions Workflows:
 
 #### 1. Deployment Workflow (`.github/workflows/jekyll-deploy.yml`)
-- Wird nur bei Push auf `main` Branch ausgeführt
+- Wird nur bei Push auf `main` Branch ausgeführ
 - Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
 - Installiert automatisch alle Dependencies
 - Deployed zu GitHub Pages
 
 #### 2. Test Workflow (`.github/workflows/jekyll-test.yml`)
-- Wird bei jedem Push auf alle anderen Branches ausgeführt
+- Wird bei jedem Push auf alle anderen Branches ausgeführ
 - Baut die Site zu Testzwecken
 - Prüft, ob alle Seiten korrekt generiert werden
 - Deployed NICHT (nur Build-Test)
@@ -73,7 +73,7 @@ Die Site verwendet zwei GitHub Actions Workflows:
 1. Gehe zu Repository Settings → Pages
 2. Wähle unter "Source": **GitHub Actions**
 3. Bei jedem Push auf `main` wird die Site automatisch deployed
-4. Auf anderen Branches wird nur getestet
+4. Auf anderen Branches wird nur geteste
 
 ### Alternative Optionen
 
@@ -101,7 +101,7 @@ gem install jekyll bundler
 cd jekyll-site
 
 # Gemfile erstellen (optional, für bessere Dependency-Verwaltung)
-bundle init
+bundle ini
 bundle add jekyll
 
 # Site bauen und Server starten
