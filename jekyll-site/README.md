@@ -19,8 +19,11 @@ jekyll-site/
 ├── _layouts/                # Layout-Templates
 │   └── default.html         # Grundlayout mit Navigation und Footer
 ├── assets/                  # Statische Assets
-│   └── css/
-│       └── style.css        # Stylesheet
+│   ├── css/
+│   │   └── style.css        # Stylesheet
+│   └── images/              # Bilder und Fotos für die Website
+│       ├── README.md        # Anleitung zur Bildverwendung
+│       └── .gitkeep         # Ensures folder is tracked
 ├── index.md                 # Startseite (Hero, Angebot, Themen)
 ├── retreat.md               # Details zum 5-Tage Retreat in der Toskana
 ├── about.md                 # Über mich (Therapeutin, Supervisorin, Coach)
@@ -50,15 +53,29 @@ permalink: /seite/
 
 ## GitHub Pages Deployment
 
-GitHub Pages hat Jekyll-Unterstützung eingebaut. So funktioniert das Deployment:
+### GitHub Actions (Empfohlen) ✅
 
-### Option 1: Root-Verzeichnis
+Die Site verwendet GitHub Actions für automatisches Deployment. Der Workflow ist bereits konfiguriert in `.github/workflows/jekyll.yml`.
+
+**Setup:**
+1. Gehe zu Repository Settings → Pages
+2. Wähle unter "Source": **GitHub Actions**
+3. Bei jedem Push auf `main` wird die Site automatisch gebaut und deployed
+
+Der Workflow:
+- Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
+- Installiert automatisch alle Dependencies
+- Deployed zu GitHub Pages
+
+### Alternative Optionen
+
+#### Option 1: Root-Verzeichnis
 Wenn die Jekyll-Dateien im Hauptverzeichnis liegen, werden sie automatisch gebaut.
 
-### Option 2: Docs-Ordner
+#### Option 2: Docs-Ordner
 Alternativ kann GitHub Pages so konfiguriert werden, dass es einen `/docs` Ordner verwendet.
 
-### Option 3: Jekyll-Site Unterordner
+#### Option 3: Jekyll-Site Unterordner
 Um die Jekyll-Site aus diesem Unterordner zu deployen:
 
 1. Kopiere den Inhalt von `jekyll-site/` ins Hauptverzeichnis, oder
@@ -93,6 +110,30 @@ Die Markdown-Dateien können direkt in GitHub oder lokal bearbeitet werden:
 2. **retreat.md**: Detaillierte Beschreibung des 5-Tage-Retreats
 3. **about.md**: Informationen über Anja Heinicke und ihre Arbeitsweise
 4. **kontakt.md**: Kontaktinformationen und FAQ
+
+## Bilder hinzufügen
+
+### Bilder hochladen
+
+1. Laden Sie Ihre Fotos in den Ordner `assets/images/` hoch
+2. Empfohlene Formate: JPG, PNG, WebP
+3. Verwenden Sie beschreibende Dateinamen ohne Leerzeichen (z.B. `toskana-retreat.jpg`)
+
+### Bilder in Seiten einbinden
+
+In Markdown-Dateien:
+
+```markdown
+![Bildbeschreibung]({{ '/assets/images/dateiname.jpg' | relative_url }})
+```
+
+In HTML:
+
+```html
+<img src="{{ '/assets/images/dateiname.jpg' | relative_url }}" alt="Bildbeschreibung">
+```
+
+Siehe `assets/images/README.md` für weitere Details und Best Practices.
 
 ## Zukünftige Erweiterungen
 

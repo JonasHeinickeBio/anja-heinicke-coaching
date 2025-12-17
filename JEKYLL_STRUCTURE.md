@@ -33,8 +33,11 @@ jekyll-site/
 ├── _layouts/                # Layout-Templates
 │   └── default.html         # Hauptlayout mit Navigation & Footer
 ├── assets/                  # Statische Ressourcen
-│   └── css/
-│       └── style.css        # Stylesheet (Kopie vom Original)
+│   ├── css/
+│   │   └── style.css        # Stylesheet (Kopie vom Original)
+│   └── images/              # 📸 Bilder und Fotos für die Website
+│       ├── README.md        # Anleitung zur Bildverwendung
+│       └── .gitkeep
 ├── index.md                 # Startseite mit Hero & Übersicht
 ├── retreat.md               # Retreat-Details (5-Tage Programm)
 ├── about.md                 # Über mich Seite
@@ -101,6 +104,27 @@ permalink: /pfad/         # URL der Seite
 
 ## GitHub Pages Deployment
 
+### GitHub Actions Workflow (Empfohlen) ✅
+
+Die Site ist bereits mit einem GitHub Actions Workflow konfiguriert (`.github/workflows/jekyll.yml`).
+
+**Setup:**
+1. Gehe zu Repository **Settings → Pages**
+2. Unter "Source" wähle: **GitHub Actions**
+3. Fertig! Bei jedem Push auf `main` wird die Site automatisch gebaut und deployed
+
+**Der Workflow macht:**
+- ✓ Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
+- ✓ Installiert automatisch alle Ruby/Jekyll Dependencies
+- ✓ Optimiert für Production Build
+- ✓ Deployed automatisch zu GitHub Pages
+
+**Vorteile:**
+- Kein manuelles Kopieren von Dateien nötig
+- Jekyll-Site bleibt im Unterordner organisiert
+- Automatische Builds bei jedem Push
+- Volle Kontrolle über Build-Prozess
+
 ### Option 1: Aus dem Root-Verzeichnis deployen
 
 1. Kopiere den Inhalt von `jekyll-site/` ins Hauptverzeichnis
@@ -120,10 +144,6 @@ GitHub Pages kann so konfiguriert werden, dass es aus dem `/docs` Ordner baut:
 
 1. Benenne `jekyll-site/` in `docs/` um
 2. In GitHub: Settings → Pages → Source → "docs" folder wählen
-
-### Option 3: Mit GitHub Actions
-
-Erstelle `.github/workflows/jekyll.yml` für custom Build-Prozess.
 
 ## Lokale Entwicklung
 
@@ -169,6 +189,34 @@ Die Site ist dann verfügbar unter: `http://localhost:4000`
    ```
 3. Füge den Inhalt in Markdown hinzu
 4. Aktualisiere die Navigation in `_layouts/default.html`
+
+### Bilder hinzufügen
+
+**Bilder hochladen:**
+
+1. Lade Fotos in den Ordner `jekyll-site/assets/images/` hoch
+2. Verwende beschreibende Dateinamen (z.B. `toskana-landschaft.jpg`)
+3. Empfohlene Formate: JPG, PNG, WebP
+
+**In Markdown einbinden:**
+
+```markdown
+![Retreat in der Toskana]({{ '/assets/images/toskana-landschaft.jpg' | relative_url }})
+```
+
+**In HTML einbinden:**
+
+```html
+<img src="{{ '/assets/images/portrait.jpg' | relative_url }}" alt="Anja Heinicke">
+```
+
+**Organisation:**
+Du kannst Unterordner erstellen:
+- `assets/images/retreat/` - Retreat-Fotos
+- `assets/images/portraits/` - Portraits
+- `assets/images/nature/` - Naturfotos
+
+Siehe `assets/images/README.md` für Details zu Bildoptimierung und Best Practices.
 
 ### Blog/Artikel hinzufügen
 
