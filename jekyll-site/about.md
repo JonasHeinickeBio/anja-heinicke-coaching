@@ -1,5 +1,5 @@
 ---
-layout: defaul
+layout: default
 title: "Über mich - Anja Heinicke"
 description: "Systemische Therapeutin, Supervisorin &amp; Coach - Meine Arbeitsweise und Philosophie"
 permalink: /about/

@@ -1,5 +1,5 @@
 ---
-layout: defaul
+layout: default
 title: "Kontakt - Anja Heinicke"
 description: "Kontaktieren Sie mich für ein unverbindliches Vorgespräch"
 permalink: /kontakt/

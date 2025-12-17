@@ -1,5 +1,5 @@
 ---
-layout: defaul
+layout: default
 title: "Finde Deinen Weg! Systemische Coaching Retreats in der Natur"
 description: "Systemische Coaching Retreats in der Natur - 5 Tage intensives Coaching in kleiner Gruppe"
 permalink: /
