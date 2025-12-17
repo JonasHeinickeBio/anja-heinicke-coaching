@@ -1,20 +1,51 @@
-backend:
-  name: github
-  repo: JonasHeinickeBio/anja-heinicke-coaching
-  branch: main
+media:
+  input: jekyll-site/assets/images
+  output: /assets/images
 
-media_folder: "jekyll-site/assets/images"
-public_folder: "/assets/images"
-
-collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "jekyll-site"
-    create: false
-    delete: false
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: jekyll-site
+    format: yaml-frontmatter
+    view:
+      fields: [title, description]
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Permalink", name: "permalink", widget: "hidden"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: Layout
+        name: layout
+        type: string
+        hidden: true
+        default: default
+      - label: Title
+        name: title
+        type: string
+      - label: Description
+        name: description
+        type: text
+      - label: Permalink
+        name: permalink
+        type: string
+        hidden: true
+      - label: Body
+        name: body
+        type: rich-text
+  - name: config
+    label: Jekyll config
+    path: jekyll-site/_config.yml
+    type: file
+    fields:
+      - name: title
+        label: Website title
+        type: string
+      - name: description
+        label: Website description
+        type: string
+        description: Will be used for any page with no description.
+      - name: url
+        label: Website URL
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+      - name: cover
+        label: Preview image
+        type: image
+        description: Image used in the social preview on social networks (e.g. Facebook, Twitter...)
