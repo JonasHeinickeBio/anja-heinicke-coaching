@@ -104,26 +104,40 @@ permalink: /pfad/         # URL der Seite
 
 ## GitHub Pages Deployment
 
-### GitHub Actions Workflow (Empfohlen) ✅
+### GitHub Actions Workflows (Empfohlen) ✅
 
-Die Site ist bereits mit einem GitHub Actions Workflow konfiguriert (`.github/workflows/jekyll.yml`).
+Die Site verwendet zwei separate GitHub Actions Workflows:
+
+#### 1. Deployment Workflow (`.github/workflows/jekyll-deploy.yml`)
+**Wann:** Nur bei Push auf `main` Branch
+
+**Was macht er:**
+- ✓ Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
+- ✓ Installiert automatisch alle Ruby/Jekyll Dependencies
+- ✓ Optimiert für Production Build (`JEKYLL_ENV=production`)
+- ✓ Deployed automatisch zu GitHub Pages
+
+#### 2. Test Workflow (`.github/workflows/jekyll-test.yml`)
+**Wann:** Bei Push auf alle anderen Branches (nicht `main`) und Pull Requests
+
+**Was macht er:**
+- ✓ Baut die Jekyll-Site zu Testzwecken
+- ✓ Prüft, ob alle erwarteten Seiten generiert werden
+- ✓ Validiert die Build-Konfiguration
+- ✗ Deployed NICHT (nur Build-Test)
 
 **Setup:**
 1. Gehe zu Repository **Settings → Pages**
 2. Unter "Source" wähle: **GitHub Actions**
-3. Fertig! Bei jedem Push auf `main` wird die Site automatisch gebaut und deployed
-
-**Der Workflow macht:**
-- ✓ Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
-- ✓ Installiert automatisch alle Ruby/Jekyll Dependencies
-- ✓ Optimiert für Production Build
-- ✓ Deployed automatisch zu GitHub Pages
+3. Fertig! Bei jedem Push auf `main` wird die Site automatisch deployed
+4. Auf Feature-Branches wird die Site nur getestet, nicht deployed
 
 **Vorteile:**
 - Kein manuelles Kopieren von Dateien nötig
 - Jekyll-Site bleibt im Unterordner organisiert
-- Automatische Builds bei jedem Push
-- Volle Kontrolle über Build-Prozess
+- Automatische Builds und Tests bei jedem Commit
+- Production-Deployment nur auf `main` Branch
+- Frühzeitige Erkennung von Build-Fehlern
 
 ### Option 1: Aus dem Root-Verzeichnis deployen
 

@@ -55,17 +55,25 @@ permalink: /seite/
 
 ### GitHub Actions (Empfohlen) ✅
 
-Die Site verwendet GitHub Actions für automatisches Deployment. Der Workflow ist bereits konfiguriert in `.github/workflows/jekyll.yml`.
+Die Site verwendet zwei GitHub Actions Workflows:
+
+#### 1. Deployment Workflow (`.github/workflows/jekyll-deploy.yml`)
+- Wird nur bei Push auf `main` Branch ausgeführt
+- Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
+- Installiert automatisch alle Dependencies
+- Deployed zu GitHub Pages
+
+#### 2. Test Workflow (`.github/workflows/jekyll-test.yml`)
+- Wird bei jedem Push auf alle anderen Branches ausgeführt
+- Baut die Site zu Testzwecken
+- Prüft, ob alle Seiten korrekt generiert werden
+- Deployed NICHT (nur Build-Test)
 
 **Setup:**
 1. Gehe zu Repository Settings → Pages
 2. Wähle unter "Source": **GitHub Actions**
-3. Bei jedem Push auf `main` wird die Site automatisch gebaut und deployed
-
-Der Workflow:
-- Baut die Jekyll-Site aus dem `jekyll-site/` Ordner
-- Installiert automatisch alle Dependencies
-- Deployed zu GitHub Pages
+3. Bei jedem Push auf `main` wird die Site automatisch deployed
+4. Auf anderen Branches wird nur getestet
 
 ### Alternative Optionen
 

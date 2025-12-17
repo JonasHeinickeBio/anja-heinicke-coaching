@@ -1,0 +1,80 @@
+name: Test Jekyll site build
+
+on:
+  # Runs on all pushes to any branch except main
+  push:
+    branches-ignore:
+      - main
+  
+  # Runs on all pull requests
+  pull_request:
+
+# No deployment permissions needed for testing
+permissions:
+  contents: read
+
+jobs:
+  # Build and test job
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+          cache-version: 0
+          working-directory: './jekyll-site'
+      
+      - name: Build with Jekyll (test)
+        working-directory: ./jekyll-site
+        run: bundle exec jekyll build --baseurl "/test"
+        env:
+          JEKYLL_ENV: development
+      
+      - name: Test build output
+        run: |
+          echo "✅ Jekyll site built successfully"
+          echo "📁 Build output directory:"
+          ls -la ./jekyll-site/_site
+          echo ""
+          echo "📄 Generated files:"
+          find ./jekyll-site/_site -type f | head -20
+      
+      - name: Check for broken links (optional)
+        working-directory: ./jekyll-site/_site
+        run: |
+          echo "🔍 Checking HTML files exist..."
+          if [ -f "index.html" ]; then
+            echo "✅ index.html found"
+          else
+            echo "❌ index.html not found"
+            exit 1
+          fi
+          
+          if [ -f "about/index.html" ]; then
+            echo "✅ about/index.html found"
+          else
+            echo "❌ about/index.html not found"
+            exit 1
+          fi
+          
+          if [ -f "retreat/index.html" ]; then
+            echo "✅ retreat/index.html found"
+          else
+            echo "❌ retreat/index.html not found"
+            exit 1
+          fi
+          
+          if [ -f "kontakt/index.html" ]; then
+            echo "✅ kontakt/index.html found"
+          else
+            echo "❌ kontakt/index.html not found"
+            exit 1
+          fi
+          
+          echo ""
+          echo "✅ All expected pages built successfully!"
