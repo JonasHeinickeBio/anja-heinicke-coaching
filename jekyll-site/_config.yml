@@ -1,0 +1,29 @@
+# Site settings
+title: "Anja Heinicke - Systemische Coaching Retreats"
+description: "Systemische Therapeutin, Supervisorin & Coach - Coaching Retreats in der Natur"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+lang: de
+
+# Author information
+author:
+  name: "Anja Heinicke"
+  email: "a_heinicke@web.de"
+  title: "Systemische Therapeutin, Supervisorin & Coach"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections (für zukünftige Blog-Posts/Artikel)
+# collections:
+#   posts:
+#     output: true
+#     permalink: /blog/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
