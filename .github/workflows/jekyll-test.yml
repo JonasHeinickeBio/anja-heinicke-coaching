@@ -20,20 +20,55 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Build with Jekyll (preinstalled dependencies)
+        uses: actions/jekyll-build-pages@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
-          cache-version: 0
-          working-directory: './jekyll-site'
-      
-      - name: Build with Jekyll (test)
-        working-directory: ./jekyll-site
-        run: bundle exec jekyll build --baseurl ""
+          source: ./jekyll-site
+          destination: ./jekyll-site/_site
         env:
           JEKYLL_ENV: development
+
+      - name: Upload test artifact (built site)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./jekyll-site/_site
+
+      - name: Check internal links with lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # point lychee at the built site
+          path: ./jekyll-site/_site
+          # fail the job on broken links
+          fail-on-error: true
+
+      - name: Setup Node (for validators)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Validate HTML with html-validate
+        run: |
+          set -euo pipefail
+          # Install a lightweight validator without committing package files
+          npm init -y >/dev/null
+          npm i --no-save html-validate@8 --silent
+          echo "Running html-validate on built site..."
+          npx html-validate -f text "jekyll-site/_site/**/*.html"
+
+
+
+      - name: Install puppeteer and capture screenshots
+        run: |
+          set -euo pipefail
+          npm init -y >/dev/null
+          npm i puppeteer --no-audit --no-fund --silent
+          node .github/scripts/screenshot.js
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-screenshots
+          path: screenshots/
       
       - name: Test build output
         run: |
@@ -47,34 +82,78 @@ jobs:
       - name: Check for broken links (optional)
         working-directory: ./jekyll-site/_site
         run: |
-          echo "🔍 Checking HTML files exist..."
-          if [ -f "index.html" ]; then
-            echo "✅ index.html found"
-          else
-            echo "❌ index.html not found"
+          set -euo pipefail
+          echo "🔍 Checking built HTML pages and basic SEO/structure"
+
+          PAGES=("index.html" "about/index.html" "retreat/index.html" "kontakt/index.html")
+
+          for p in "${PAGES[@]}"; do
+            echo "\n-- checking $p --"
+            if [ ! -f "$p" ]; then
+              echo "❌ $p not found"
+              exit 1
+            fi
+
+            # DOCTYPE
+            if ! head -n 2 "$p" | tr '[:upper:]' '[:lower:]' | grep -q "<!doctype html"; then
+              echo "❌ $p missing <!doctype html>"
+              exit 1
+            else
+              echo "✅ DOCTYPE present"
+            fi
+
+            # html lang attribute (expect de)
+            if ! grep -qi '<html[^>]*lang="de"' "$p"; then
+              echo "⚠️  $p: html lang attribute not set to \"de\" (recommended)"
+            else
+              echo "✅ html lang=de present"
+            fi
+
+            # title exists and non-empty
+            title=$(sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' "$p" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//') || true
+            if [ -z "$title" ]; then
+              echo "❌ $p: <title> is missing or empty"
+              exit 1
+            else
+              echo "✅ title: $title"
+            fi
+
+            # meta description
+            if ! grep -qi '<meta[^>]*name=["\'']description["\'']' "$p"; then
+              echo "❌ $p: meta description missing"
+              exit 1
+            else
+              echo "✅ meta description present"
+            fi
+          done
+
+          echo "\n-- navigation checks (index.html) --"
+          NAV_MISS=0
+          for target in '/about/' '/retreat/' '/kontakt/'; do
+            if ! grep -q "$target" index.html; then
+              echo "❌ index.html missing nav link to $target"
+              NAV_MISS=1
+            else
+              echo "✅ nav contains $target"
+            fi
+          done
+          if [ "$NAV_MISS" -eq 1 ]; then
             exit 1
           fi
-          
-          if [ -f "about/index.html" ]; then
-            echo "✅ about/index.html found"
+
+          echo "\n-- assets checks --"
+          # Ensure images folder exists and not empty
+          if [ -d "assets/images" ] && [ "$(ls -A assets/images | wc -l)" -gt 0 ]; then
+            echo "✅ assets/images contains files"
           else
-            echo "❌ about/index.html not found"
-            exit 1
+            echo "⚠️  assets/images appears empty or missing (check image usage)"
           fi
-          
-          if [ -f "retreat/index.html" ]; then
-            echo "✅ retreat/index.html found"
+
+          # Check contact email exists on kontakt page or index
+          if grep -qi 'mailto:a_heinicke@web.de' kontakt/index.html || grep -qi 'mailto:a_heinicke@web.de' index.html; then
+            echo "✅ contact email found"
           else
-            echo "❌ retreat/index.html not found"
-            exit 1
+            echo "⚠️  contact email not found in built pages"
           fi
-          
-          if [ -f "kontakt/index.html" ]; then
-            echo "✅ kontakt/index.html found"
-          else
-            echo "❌ kontakt/index.html not found"
-            exit 1
-          fi
-          
-          echo ""
-          echo "✅ All expected pages built successfully!"
+
+          echo "\n✅ All quick HTML checks passed (or warnings printed)."
