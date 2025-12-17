@@ -1,6 +1,8 @@
 # Jekyll Site für Anja Heinicke Coaching
 
-Dieser Ordner enthält die Jekyll-basierte Version der Website mit strukturierten Markdown-Dateien und Layouts.
+Dieser Ordner enthält die Jekyll-basierte Version der Website mit **sauberer Trennung von Inhalt (Markdown) und Struktur (HTML/Layouts)**.
+
+> 📖 **Für Details zur Content-Struktur siehe:** [STRUCTURE.md](STRUCTURE.md)
 
 ## Was ist Jekyll?
 
@@ -10,6 +12,7 @@ Jekyll ist ein Static Site Generator, der Markdown- und HTML-Dateien mit YAML-Fr
 - **Wiederverwendbare Layouts**: Ein Layout für alle Seiten
 - **GitHub Pages Integration**: Automatisches Bauen und Deployen
 - **Erweiterbarkeit**: Collections für Blog-Posts oder weitere Inhalte
+- **Saubere Architektur**: Content in Markdown, Struktur in Layouts
 
 ## Struktur
 
@@ -18,9 +21,12 @@ jekyll-site/
 ├── _config.yml              # Site-Konfiguration (Titel, URL, Metadaten)
 ├── _layouts/                # Layout-Templates
 │   └── default.html         # Grundlayout mit Navigation und Footer
+├── _includes/               # Wiederverwendbare Komponenten
+│   ├── hero.html            # Hero-Section Component
+│   └── section.html         # Section Component (optional)
 ├── assets/                  # Statische Assets
 │   ├── css/
-│   │   └── style.css        # Styleshee
+│   │   └── style.css        # Stylesheet
 │   └── images/              # Bilder und Fotos für die Website
 │       ├── README.md        # Anleitung zur Bildverwendung
 │       └── .gitkeep         # Stellt sicher, dass der Ordner verfolgt wird
@@ -28,8 +34,11 @@ jekyll-site/
 ├── retreat.md               # Details zum 5-Tage Retreat in der Toskana
 ├── about.md                 # Über mich (Therapeutin, Supervisorin, Coach)
 ├── kontakt.md               # Kontaktseite mit Vorgespräch-Infos
+├── STRUCTURE.md             # 📖 Detaillierte Struktur-Dokumentation
 └── README.md                # Diese Datei
 ```
+
+**Wichtig:** Seiten liegen direkt im Root-Verzeichnis, nicht in einem `pages/` Unterordner!
 
 ## YAML Frontmatter
 
