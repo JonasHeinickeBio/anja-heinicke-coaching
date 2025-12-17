@@ -1,5 +1,5 @@
 ---
-layout: defaul
+layout: default
 title: "Retreat in der Toskana - 5-Tage Programm"
 description: "Details zum 5-tägigen Coaching Retreat in einem kleinen toskanischen Dorf"
 permalink: /retreat/
