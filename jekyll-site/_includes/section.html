@@ -1,0 +1,10 @@
+<section id="{{ include.id }}" class="section{% if include.alt %} section-alt{% endif %}">
+    <div class="container">
+        {% if include.title %}
+        <h2>{{ include.title }}</h2>
+        {% endif %}
+        <div class="content-box">
+            {{ include.content }}
+        </div>
+    </div>
+</section>

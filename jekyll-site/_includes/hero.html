@@ -1,0 +1,11 @@
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1>{{ include.title }}</h1>
+        <h2>{{ include.subtitle }}</h2>
+        <p class="hero-subtitle">{{ include.tagline }}</p>
+        <p class="hero-subtitle">{{ include.description }}</p>
+        {% if include.cta_text and include.cta_link %}
+        <a href="{{ include.cta_link }}" class="cta-button">{{ include.cta_text }}</a>
+        {% endif %}
+    </div>
+</section>
