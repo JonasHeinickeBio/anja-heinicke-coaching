@@ -46,7 +46,7 @@ jobs:
           set -euo pipefail
           # Install a lightweight validator without committing package files
           npm init -y >/dev/null
-          npm i --no-save html-validate@8 --silent
+          npm i --no-save html-validate --silent
           echo "Running html-validate on built site..."
           npx html-validate -f text "jekyll-site/_site/**/*.html"
 

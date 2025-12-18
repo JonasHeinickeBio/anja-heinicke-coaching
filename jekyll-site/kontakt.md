@@ -28,7 +28,7 @@ Spezialisiert auf systemisches Coaching in der Natur für persönliche Neuausric
 
 ### 📧 E-Mail
 
-[{{ site.author.email }}](mailto:{{ site.author.email }})
+[E-Mail senden](mailto:{{ site.author.email }})
 
 Ich antworte in der Regel innerhalb von 2 Werktagen.
 
