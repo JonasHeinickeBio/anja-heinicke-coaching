@@ -1,8 +1,9 @@
 {
   "extends": ["html-validate:recommended"],
   "rules": {
-    "attr-no-dup": "error",
-    "img-req-alt": "error",
-    "no-unknown-elements": "error"
+    "no-dup-attr": "error",
+    "wcag/h37": "error",
+    "no-unknown-elements": "error",
+    "void-style": "any"
   }
 }
