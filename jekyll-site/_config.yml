@@ -1,33 +1,3 @@
-# Site settings
-title: "Anja Heinicke - Systemische Coaching Retreats"
-description: "Systemische Therapeutin, Supervisorin & Coach - Coaching Retreats in der Natur"
-baseurl: "/anja-heinicke-coaching" # the subpath of your site, e.g. /blog
-url: "https://JonasHeinickeBio.github.io" # the base hostname & protocol for your site
-lang: de
-
-# Author information
-author:
-  name: "Anja Heinicke"
-  email: "a_heinicke@web.de"
-  title: "Systemische Therapeutin, Supervisorin &amp; Coach"
-
-# Build settings
-markdown: kramdown
-kramdown:
-  input: Kramdown
-  hard_wrap: false
-  parse_block_html: true
-permalink: pretty
-
-# Collections (für zukünftige Blog-Posts/Artikel)
-# collections:
-#   posts:
-#     output: true
-#     permalink: /blog/:title/
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+title: Systemische Coaching Retreats -  Anja Heinicke
+description: Systemische Therapeutin, Supervisorin & Coach - Coaching Retreats in der Natur
+url: https://JonasHeinickeBio.github.io
