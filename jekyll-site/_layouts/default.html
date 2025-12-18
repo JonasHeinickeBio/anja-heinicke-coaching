@@ -21,15 +21,39 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
-        {{ content }}
+    <main class="main-content">
+        <article class="page-content">
+            {{ content }}
+        </article>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }} – {{ site.author.title }}</p>
-            <p>Systemische Coaching Retreats in der Natur</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anja Heinicke</h3>
+                    <p>Systemische Therapeutin, Supervisorin & Coach</p>
+                    <p>Coaching Retreats in der Natur</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                        <li><a href="{{ '/about/' | relative_url }}">Über mich</a></li>
+                        <li><a href="{{ '/retreat/' | relative_url }}">Retreat</a></li>
+                        <li><a href="{{ '/kontakt/' | relative_url }}">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Bei Fragen zu den Retreats oder zum Coaching</p>
+                    <a href="{{ '/kontakt/' | relative_url }}" class="footer-cta">Jetzt anfragen</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: "%Y" }} Anja Heinicke. Alle Rechte vorbehalten.</p>
+            </div>
         </div>
     </footer>
 
@@ -46,6 +70,14 @@
                     });
                 }
             });
+        });
+
+        // Add active class to current navigation item
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('.navigation a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
         });
     </script>
 </body>

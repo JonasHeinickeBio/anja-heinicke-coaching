@@ -62,32 +62,32 @@ Das Retreat ist bewusst mit Freiräumen gestaltet, damit sich individuelle Entwi
 
 <div class="retreat-details" markdown="1">
 
-### Burnout & Prävention
-Erschöpfung erkennen, verstehen und vorbeugen
+### 🌿 Burnout & Prävention
+**Erschöpfung erkennen, verstehen und vorbeugen**
 
-### Self-Care
-Selbstfürsorge lernen und im Alltag verankern
+### 🧘 Self-Care
+**Selbstfürsorge lernen und im Alltag verankern**
 
-### Grenzen ziehen
-Persönliche Grenzen setzen und kommunizieren
+### 🛡️ Grenzen ziehen
+**Persönliche Grenzen setzen und kommunizieren**
 
-### Selbstannahme
-Sich selbst annehmen, wie Sie sind
+### 💝 Selbstannahme
+**Sich selbst annehmen, wie Sie sind**
 
-### Entscheidungsfindung
-Klarheit gewinnen für wichtige Entscheidungen
+### 🎯 Entscheidungsfindung
+**Klarheit gewinnen für wichtige Entscheidungen**
 
-### Selbstwertgefühl
-Den eigenen Wert erkennen und stärken
+### ⭐ Selbstwertgefühl
+**Den eigenen Wert erkennen und stärken**
 
-### Selbstoptimierung hinterfragen
-Vom Optimierungsdruck zur Selbstakzeptanz
+### 🔄 Selbstoptimierung hinterfragen
+**Vom Optimierungsdruck zur Selbstakzeptanz**
 
-### Eigenverantwortung
-Selbstwirksamkeit und Handlungsfähigkeit stärken
+### 🎭 Eigenverantwortung
+**Selbstwirksamkeit und Handlungsfähigkeit stärken**
 
-### Coping Strategien
-Bewältigungsstrategien für herausfordernde Zeiten
+### 🛠️ Coping Strategien
+**Bewältigungsstrategien für herausfordernde Zeiten**
 
 </div>
 
