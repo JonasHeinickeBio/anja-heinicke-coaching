@@ -5,14 +5,15 @@ description: "Systemische Coaching Retreats in der Natur - 5 Tage intensives Coa
 permalink: /
 ---
 
-{% include hero.html 
-  title="Finde Deinen Weg!" 
-  subtitle="Systemische Coaching Retreats in der Natur"
-  tagline="So geht es nicht weiter! – Aber wie?"
-  description="In unseren Coaching Retreats in der Natur können Sie Ideen und Ansätze entwickeln, welche Wege Sie in Zukunft gehen möchten."
-  cta_text="Mehr erfahren"
-  cta_link="#einleitung"
-%}
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1>Finde Deinen Weg!</h1>
+        <h2>Systemische Coaching Retreats in der Natur</h2>
+        <p class="hero-subtitle">So geht es nicht weiter! – Aber wie?</p>
+        <p class="hero-subtitle">In unseren Coaching Retreats in der Natur können Sie Ideen und Ansätze entwickeln, welche Wege Sie in Zukunft gehen möchten.</p>
+        <a href="#einleitung" class="cta-button">Mehr erfahren</a>
+    </div>
+</section>
 
 <section id="einleitung" class="section">
 <div class="container" markdown="1">
@@ -39,13 +40,13 @@ Die Aufmerksamkeit auf die Einfachheit zu lenken, sie wertzuschätzen und tiefe 
 
 <div class="retreat-details" markdown="1">
 
-### 🏞️ Klein und Persönlich
+### Klein und Persönlich
 Wir halten die Gruppe bewusst klein (max. 4 Personen), um einen geschützten Raum zu schaffen und intensive Auseinandersetzung zu ermöglichen.
 
-### 🧘 Natur als Therapeutin
+### Natur als Therapeutin
 Jeden Tag besuchen wir unterschiedliche Orte in der Region. Die Schönheit und Vollkommenheit der Natur dient als Quelle der Inspiration und Kraftschöpfung.
 
-### 🌱 Raum für Entfaltung
+### Raum für Entfaltung
 Das Retreat ist bewusst mit Freiräumen gestaltet, damit sich individuelle Entwicklungen entfalten können. Bewegung in der Natur bringt Gedanken und Ideen in Bewegung.
 
 </div>
@@ -106,17 +107,18 @@ Wenn Gefühle wie Hilflosigkeit und „ich kann daran nichts ändern" vorherrsch
 
 ## Erfahrungsbericht
 
-{% capture testimonial_content %}
-"Gern möchte ich meine positive Erfahrung des systemischen Coachings durch Anja Heinicke teilen. Ihre einfühlsame Begleitung und ihr systemischer Ansatz haben meinen Lernprozess sowohl im beruflichen als auch im privaten Bereich in beeindruckender Weise unterstützt.
+<div class="testimonial">
+    <blockquote>
+        "Gern möchte ich meine positive Erfahrung des systemischen Coachings durch Anja Heinicke teilen. Ihre einfühlsame Begleitung und ihr systemischer Ansatz haben meinen Lernprozess sowohl im beruflichen als auch im privaten Bereich in beeindruckender Weise unterstützt.
 
 Durch ihre Empathie habe ich mich jederzeit verstanden gefühlt und ihr Blick auf komplexe Zusammenhänge hat mir ganz neue Perspektiven eröffnet. Durch unsere Zusammenarbeit konnte ich nicht nur praktische und alltagstaugliche Werkzeuge erlernen, sondern auch tiefere Selbsterkenntnis entwickeln.
 
 Sie hat die Fähigkeit, einen offenen und unterstützenden Raum zu schaffen, der es mir ermöglichte, meine Gedanken und Gefühle sicher zu erkunden. Ihr Coaching hat mir geholfen, effektiver mit meinen Ressourcen umzugehen und meine persönlichen Ziele klarer zu definieren.
 
 Ich bin überzeugt, dass dieser Ansatz vielen Menschen dabei helfen wird, positive Veränderungen in ihrem Leben zu initiieren."
-{% endcapture %}
-
-{% include testimonial.html content=testimonial_content author="Ehemaliger Klient" %}
+        <cite>– Ehemaliger Klient</cite>
+    </blockquote>
+</div>
 
 </div>
 </section>

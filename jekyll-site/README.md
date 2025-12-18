@@ -2,7 +2,7 @@
 
 Dieser Ordner enthält die Jekyll-basierte Version der Website mit **sauberer Trennung von Inhalt (Markdown) und Struktur (HTML/Layouts)**.
 
-> 📖 **Für Details zur Content-Struktur siehe:** [STRUCTURE.md](STRUCTURE.md)
+> 📖 **Für Details zur Content-Struktur siehe:** [JEKYLL_STRUCTURE.md](../JEKYLL_STRUCTURE.md)
 
 ## Was ist Jekyll?
 
@@ -46,7 +46,7 @@ Jede Markdown-Seite beginnt mit YAML Frontmatter:
 
 ```yaml
 ---
-layout: defaul
+layout: default
 title: "Seitentitel"
 description: "Seitenbeschreibung für SEO"
 permalink: /seite/

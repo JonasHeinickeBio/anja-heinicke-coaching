@@ -1,8 +1,8 @@
 # Site settings
 title: "Anja Heinicke - Systemische Coaching Retreats"
-description: "Systemische Therapeutin, Supervisorin &amp; Coach - Coaching Retreats in der Natur"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+description: "Systemische Therapeutin, Supervisorin & Coach - Coaching Retreats in der Natur"
+baseurl: "/anja-heinicke-coaching" # the subpath of your site, e.g. /blog
+url: "https://JonasHeinickeBio.github.io" # the base hostname & protocol for your site
 lang: de
 
 # Author information

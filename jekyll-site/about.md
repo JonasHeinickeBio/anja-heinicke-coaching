@@ -26,13 +26,13 @@ Diese erlauben in einem geschützten Rahmen, sich für neue Erfahrungen zu öffn
 
 <div class="retreat-details" markdown="1">
 
-### 🌱 Ressourcenorientierung
+### Ressourcenorientierung
 Eine ressourcenorientierte Haltung ist grundlegend für meine Arbeit. Jede Person verfügt über Ressourcen, die eventuell verdeckt sind. Im Coaching können diese wieder entdeckt und zugänglich gemacht werden.
 
-### 💎 Inneres Wissen
+### Inneres Wissen
 Im Coaching können Sie Ihre Aufmerksamkeit auf Ihr inneres Wissen legen, welches vielleicht von äußeren Erwartungshaltungen überlagert ist, und können so Ihren inneren Frieden wiederfinden.
 
-### 🔄 Systemischer Ansatz
+### Systemischer Ansatz
 Der systemische Blick ermöglicht es, komplexe Zusammenhänge zu erkennen und neue Perspektiven zu entwickeln. Nicht das Problem steht im Mittelpunkt, sondern die Lösung.
 
 </div>
@@ -99,17 +99,18 @@ Ich arbeite besonders gerne mit Frauen in der Lebensmitte, die sich in Übergang
 
 ## Erfahrungsbericht
 
-{% capture testimonial_content %}
-"Gern möchte ich meine positive Erfahrung des systemischen Coachings durch Anja Heinicke teilen. Ihre einfühlsame Begleitung und ihr systemischer Ansatz haben meinen Lernprozess sowohl im beruflichen als auch im privaten Bereich in beeindruckender Weise unterstützt.
+<div class="testimonial">
+    <blockquote>
+        "Gern möchte ich meine positive Erfahrung des systemischen Coachings durch Anja Heinicke teilen. Ihre einfühlsame Begleitung und ihr systemischer Ansatz haben meinen Lernprozess sowohl im beruflichen als auch im privaten Bereich in beeindruckender Weise unterstützt.
 
 Durch ihre Empathie habe ich mich jederzeit verstanden gefühlt und ihr Blick auf komplexe Zusammenhänge hat mir ganz neue Perspektiven eröffnet. Durch unsere Zusammenarbeit konnte ich nicht nur praktische und alltagstaugliche Werkzeuge erlernen, sondern auch tiefere Selbsterkenntnis entwickeln.
 
 Sie hat die Fähigkeit, einen offenen und unterstützenden Raum zu schaffen, der es mir ermöglichte, meine Gedanken und Gefühle sicher zu erkunden. Ihr Coaching hat mir geholfen, effektiver mit meinen Ressourcen umzugehen und meine persönlichen Ziele klarer zu definieren.
 
 Ich bin überzeugt, dass dieser Ansatz vielen Menschen dabei helfen wird, positive Veränderungen in ihrem Leben zu initiieren."
-{% endcapture %}
-
-{% include testimonial.html content=testimonial_content author="Ehemaliger Klient" %}
+        <cite>– Ehemaliger Klient</cite>
+    </blockquote>
+</div>
 
 </div>
 </section>
