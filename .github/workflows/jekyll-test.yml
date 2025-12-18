@@ -1,11 +1,6 @@
 name: Test Jekyll site build
 
-on:
-  # Runs on all pushes to any branch except main
-  push:
-    branches-ignore:
-      - main
-  
+on:  
   # Runs on all pull requests
   pull_request:
 

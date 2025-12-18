@@ -4,6 +4,6 @@
     "no-dup-attr": "error",
     "wcag/h37": "error",
     "no-unknown-elements": "error",
-    "void-style": "selfclose"
+    "void-style": "off"
   }
 }
