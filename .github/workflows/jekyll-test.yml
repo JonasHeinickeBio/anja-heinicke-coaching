@@ -65,6 +65,21 @@ jobs:
           name: site-screenshots
           path: screenshots/
       
+      - name: Comment PR with screenshots
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const comment = `## 📸 Site Screenshots\n\nScreenshots of the built site are available in the [Actions run artifacts](${runUrl}).\n\nYou can download them from the "site-screenshots" artifact in the run summary.`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+      
       - name: Test build output
         run: |
           echo "✅ Jekyll site built successfully"
