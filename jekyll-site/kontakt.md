@@ -26,9 +26,9 @@ Ob Sie Fragen zu den Coaching Retreats haben, ein unverbindliches Vorgespräch v
 
 Spezialisiert auf systemisches Coaching in der Natur für persönliche Neuausrichtung und Ressourcenentdeckung.
 
-### 📧 E-Mail
+### E-Mail
 
-[E-Mail senden](mailto:{{ site.author.email }})
+[{{ site.author.email }}](mailto:{{ site.author.email }})
 
 Ich antworte in der Regel innerhalb von 2 Werktagen.
 

@@ -69,16 +69,16 @@ Der letzte Tag dient der Integration und dem Abschied:
 
 <div class="retreat-details" markdown="1">
 
-### 🌄 Ausflüge in die Region
+### Ausflüge in die Region
 Besuche zu besonderen Orten in der Toskana – mittelalterliche Dörfer, Aussichtspunkte, Naturschauplätze. Jeder Ausflug wird von einer gemeinsamen Mahlzeit abgerundet.
 
-### 🧘 Meditation und Achtsamkeit
+### Meditation und Achtsamkeit
 Tägliche optionale Meditationen zur Stressbewältigung und Förderung der Achtsamkeit. Verschiedene Techniken werden vorgestellt und geübt.
 
-### 🌿 Natur als Raum
+### Natur als Raum
 Die toskanische Natur bietet vielfältige Möglichkeiten für Spaziergänge, Reflexion und Inspiration. Jeden Tag besuchen wir unterschiedliche Orte.
 
-### 📝 Individuelle Zeit
+### Individuelle Zeit
 Ausreichend Freiraum für persönliche Aktivitäten, Journaling, Ruhe oder eigene Erkundungen.
 
 </div>
