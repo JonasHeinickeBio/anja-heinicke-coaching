@@ -1,0 +1,23 @@
+{% if include.id %}
+<section id="{{ include.id }}" class="hero">
+{% else %}
+<section class="hero">
+{% endif %}
+    <div class="hero-content">
+        {% if include.title %}
+        <h1>{{ include.title }}</h1>
+        {% endif %}
+        {% if include.subtitle %}
+        <h2>{{ include.subtitle }}</h2>
+        {% endif %}
+        {% if include.description %}
+        <p class="hero-subtitle">{{ include.description }}</p>
+        {% endif %}
+        {% if include.description2 %}
+        <p class="hero-subtitle">{{ include.description2 }}</p>
+        {% endif %}
+        {% if include.cta_text and include.cta_link %}
+        <a href="{{ include.cta_link }}" class="cta-button">{{ include.cta_text }}</a>
+        {% endif %}
+    </div>
+</section>

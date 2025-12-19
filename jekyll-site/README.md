@@ -14,31 +14,61 @@ Jekyll ist ein Static Site Generator, der Markdown- und HTML-Dateien mit YAML-Fr
 - **Erweiterbarkeit**: Collections für Blog-Posts oder weitere Inhalte
 - **Saubere Architektur**: Content in Markdown, Struktur in Layouts
 
-## Struktur
+# Jekyll Site für Anja Heinicke Coaching
+
+Dieser Ordner enthält die Jekyll-basierte Version der Website mit **sauberer Trennung von Inhalt (Markdown) und Struktur (HTML/Layouts)**.
+
+> 📖 **Für Details zur Content-Struktur siehe:** [JEKYLL_STRUCTURE.md](../JEKYLL_STRUCTURE.md)
+
+## Was ist Jekyll?
+
+Jekyll ist ein Static Site Generator, der Markdown- und HTML-Dateien mit YAML-Frontmatter in eine komplette statische Website umwandelt. Die Hauptvorteile sind:
+
+- **Strukturierte Inhalte**: Markdown-Dateien sind einfach zu bearbeiten
+- **Wiederverwendbare Layouts**: Ein Layout für alle Seiten
+- **GitHub Pages Integration**: Automatisches Bauen und Deployen
+- **Erweiterbarkeit**: Collections für Blog-Posts oder weitere Inhalte
+- **Saubere Architektur**: Content in Markdown, Struktur in Layouts
+
+## Offizielle Jekyll Struktur
+
+Diese Site folgt der [offiziellen Jekyll Verzeichnisstruktur](https://jekyllrb.com/docs/structure/):
 
 ```
 jekyll-site/
 ├── _config.yml              # Site-Konfiguration (Titel, URL, Metadaten)
-├── _layouts/                # Layout-Templates
-│   └── default.html         # Grundlayout mit Navigation und Footer
+├── _data/                   # Daten-Dateien für Site-Variablen
+├── _drafts/                 # Unveröffentlichte Posts
 ├── _includes/               # Wiederverwendbare Komponenten
 │   ├── hero.html            # Hero-Section Component
-│   └── section.html         # Section Component (optional)
+│   ├── section.html         # Section Component
+│   └── testimonial.html     # Testimonial Component
+├── _layouts/                # Layout-Templates
+│   └── default.html         # Grundlayout mit Navigation und Footer
+├── _posts/                  # Blog-Posts (YYYY-MM-DD-title.md)
+│   └── 2025-12-19-welcome-to-jekyll.md
+├── _sass/                   # Sass-Partials
+├── _site/                   # Generierte Site (nicht committen)
+├── .jekyll-cache/           # Jekyll Cache (nicht committen)
 ├── assets/                  # Statische Assets
 │   ├── css/
-│   │   └── style.css        # Stylesheet
+│   │   └── main.scss        # Haupt-Stylesheet (Sass)
 │   └── images/              # Bilder und Fotos für die Website
-│       ├── README.md        # Anleitung zur Bildverwendung
-│       └── .gitkeep         # Stellt sicher, dass der Ordner verfolgt wird
+├── admin/                   # Pages CMS Admin Interface
 ├── index.md                 # Startseite (Hero, Angebot, Themen)
-├── retreat.md               # Details zum 5-Tage Retreat in der Toskana
 ├── about.md                 # Über mich (Therapeutin, Supervisorin, Coach)
 ├── kontakt.md               # Kontaktseite mit Vorgespräch-Infos
-├── STRUCTURE.md             # 📖 Detaillierte Struktur-Dokumentation
-└── README.md                # Diese Datei
+├── retreat.md               # Details zum 5-Tage Retreat in der Toskana
+├── .gitignore               # Git-Ignore Regeln
+├── Gemfile                  # Ruby Dependencies
+├── Gemfile.lock             # Locked Ruby Dependencies
+├── README.md                # Diese Datei
+└── STRUCTURE.md             # 📖 Detaillierte Struktur-Dokumentation
 ```
 
-**Wichtig:** Seiten liegen direkt im Root-Verzeichnis, nicht in einem `pages/` Unterordner!
+## YAML Frontmatter
+
+Jede Markdown-Seite beginnt mit YAML Frontmatter:
 
 ## YAML Frontmatter
 

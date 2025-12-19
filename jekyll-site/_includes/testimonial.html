@@ -1,0 +1,13 @@
+<section class="section section-alt">
+<div class="container">
+<h2>{{ include.title | default: "Erfahrungsbericht" }}</h2>
+
+<div class="testimonial">
+    <blockquote>
+        {{ include.quote | markdownify }}
+        <cite>– {{ include.author }}</cite>
+    </blockquote>
+</div>
+
+</div>
+</section>

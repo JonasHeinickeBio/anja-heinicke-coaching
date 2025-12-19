@@ -1,0 +1,16 @@
+{% assign section_class = "section" %}
+{% if include.alt %}
+{% assign section_class = "section section-alt" %}
+{% endif %}
+
+{% if include.id %}
+<section id="{{ include.id }}" class="{{ section_class }}">
+{% else %}
+<section class="{{ section_class }}">
+{% endif %}
+<div class="container">
+<div class="content-box">
+{{ include.content | markdownify }}
+</div>
+</div>
+</section>

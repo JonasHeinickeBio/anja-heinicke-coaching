@@ -1,0 +1,50 @@
+# Site settings
+repository: "JonasHeinickeBio/anja-heinicke-coaching"
+
+# SEO Related
+google_site_verification:
+bing_site_verification:
+alexa_site_verification:
+yandex_site_verification:
+
+# Social Sharing
+twitter:
+  username: anjaheinicke
+social:
+  name: Anja Heinicke Coaching
+  links:
+    - https://www.linkedin.com/in/anja-heinicke
+
+# Analytics
+analytics:
+  provider: false
+  google:
+    tracking_id:
+
+# Site Author
+author:
+  name: Anja Heinicke
+  avatar: /assets/images/avatar.jpg
+  bio: "Systemische Therapeutin, Supervisorin & Coach"
+  location: "Deutschland"
+  email: info@anja-heinicke-coaching.de
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:info@anja-heinicke-coaching.de"
+
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/JonasHeinickeBio"
+
+# Comments
+comments:
+  provider: false
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minimal-mistakes-jekyll
