@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
+gem "minimal-mistakes-jekyll"
 
 # GitHub Pages compatibility (optional, uncomment if deploying to GitHub Pages)
 # gem "github-pages", group: :jekyll_plugins

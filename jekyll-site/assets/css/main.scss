@@ -4,8 +4,8 @@
 
 @charset "utf-8";
 
-// Custom styles for Minimal Mistakes theme
-// The theme styles are loaded automatically by Jekyll
+// Import Minimal Mistakes theme
+@import "minimal-mistakes";
 
 // Custom color scheme
 $primary-color: #8B6F47;
@@ -15,7 +15,7 @@ $secondary-color: #D4A574;
 .hero {
   background: linear-gradient(135deg, #8B6F47 0%, #D4A574 100%);
   color: white;
-  padding: 80px 0;
+  padding: 80px 20px;
   text-align: center;
 
   .hero-content {
@@ -23,19 +23,19 @@ $secondary-color: #D4A574;
     margin: 0 auto;
 
     h1 {
-      font-size: 3rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       margin-bottom: 1rem;
       font-weight: 700;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       margin-bottom: 2rem;
       opacity: 0.9;
     }
 
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
       margin-bottom: 1rem;
       line-height: 1.6;
     }
@@ -60,7 +60,7 @@ $secondary-color: #D4A574;
 
 // Section styling
 .section {
-  padding: 60px 0;
+  padding: 60px 20px;
 
   &.section-alt {
     background: #f8f9fa;
@@ -76,7 +76,7 @@ $secondary-color: #D4A574;
     text-align: center;
     margin-bottom: 2rem;
     color: #8B6F47;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 600;
   }
 }
@@ -342,5 +342,93 @@ $secondary-color: #D4A574;
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+}
+
+// Additional responsive breakpoints
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+
+    .hero-content {
+      .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .section {
+    padding: 40px 20px;
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .retreat-details {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .coaching-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial {
+    padding: 30px 20px;
+
+    .testimonial-content {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px;
+
+    .hero-content {
+      h1 {
+        margin-bottom: 0.8rem;
+      }
+
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-subtitle {
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-button {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .section {
+    padding: 30px 15px;
+
+    h2 {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .navigation {
+    .container {
+      ul {
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+          a {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
   }
 }
