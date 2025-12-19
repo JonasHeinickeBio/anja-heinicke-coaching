@@ -1,0 +1,6 @@
+<div class="retreat-details">
+{% for item in include.items %}
+<h3>{{ item.title }}</h3>
+{{ item.content | markdownify }}
+{% endfor %}
+</div>

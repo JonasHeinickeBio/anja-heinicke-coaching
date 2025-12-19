@@ -1,0 +1,80 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.title %}
+    <title>{{ page.title | append: " - " | append: site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    {% if page.navigation %}
+    {% include navigation.html items=page.navigation %}
+    {% endif %}
+    <div class="page">
+      <div class="page__content">
+        {% if page.hero %}
+        {% include hero.html id="hero" title=page.hero.title subtitle=page.hero.subtitle description=page.hero.description description2=page.hero.description2 cta_text=page.hero.cta_text cta_link=page.hero.cta_link %}
+        {% endif %}
+
+        {% if page.sections %}
+        {% for section in page.sections %}
+        {% if section.retreat_details %}
+        <section id="{{ section.id }}" class="section{% if section.alt %} section-alt{% endif %}">
+        <div class="container">
+        <h2>{{ section.title }}</h2>
+        {% include retreat_details.html items=section.retreat_details %}
+        </div>
+        </section>
+        {% elsif section.coaching_topics %}
+        <section id="{{ section.id }}" class="section{% if section.alt %} section-alt{% endif %}">
+        <div class="container">
+        <h2>{{ section.title }}</h2>
+        {% if section.intro %}
+        <div class="content-box">
+        <p class="lead">{{ section.intro | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        </div>
+        {% endif %}
+        {% include coaching_topics.html topics=section.coaching_topics %}
+        {% if section.additional_content %}
+        <div class="content-box">
+        {{ section.additional_content | markdownify }}
+        </div>
+        {% endif %}
+        </div>
+        </section>
+        {% else %}
+        {% include section.html id=section.id alt=section.alt content=section.content %}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if page.testimonial %}
+        {% include testimonial.html title="Erfahrungsbericht" quote=page.testimonial.quote author=page.testimonial.author %}
+        {% endif %}
+
+        {% if page.cta_final %}
+        <section class="section{% if page.cta_final.alt %} section-alt{% endif %}">
+        <div class="container">
+        {{ page.cta_final.content | markdownify }}
+
+        {% if page.cta_final.cta_text and page.cta_final.cta_link %}
+        <a href="{{ page.cta_final.cta_link }}" class="cta-button">{{ page.cta_final.cta_text }}</a>
+        {% endif %}
+        </div>
+        </section>
+        {% endif %}
+
+        {{ content }}
+      </div>
+    </div>
+  </body>
+</html>

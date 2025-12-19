@@ -1,0 +1,9 @@
+<section class="section">
+<div class="container">
+{{ include.content | markdownify }}
+
+{% if include.cta_text and include.cta_link %}
+<a href="{{ include.cta_link }}" class="cta-button">{{ include.cta_text }}</a>
+{% endif %}
+</div>
+</section>

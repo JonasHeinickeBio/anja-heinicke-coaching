@@ -1,0 +1,92 @@
+# Minimal Mistakes Theme
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "sunrise"
+
+# Site settings
+locale: "de"
+title: "Anja Heinicke - Systemische Coaching Retreats"
+title_separator: "-"
+subtitle: "Finde Deinen Weg!"
+description: "Systemische Therapeutin, Supervisorin & Coach - Coaching Retreats in der Natur"
+url: "https://JonasHeinickeBio.github.io"
+baseurl: "/anja-heinicke-coaching"
+repository: "JonasHeinickeBio/anja-heinicke-coaching"
+
+# Author information
+author:
+  name: "Anja Heinicke"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "Systemische Therapeutin, Supervisorin & Coach"
+  location: "Deutschland"
+  email: "info@anja-heinicke-coaching.de"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:info@anja-heinicke-coaching.de"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  retreats:
+    output: false
+
+# Plugins
+plugins:
+  - jekyll-include-cache
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+jekyll-archives:
+  enabled: []
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Exclude from processing
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundlecache
+  - .sass-cache
+  - CHANGELOG.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - .jekyll-metadata
+  - "*.gemspec"
+
+# Include files
+include:
+  - _pages

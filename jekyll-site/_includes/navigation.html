@@ -1,0 +1,10 @@
+<!-- Navigation -->
+<nav class="navigation">
+    <div class="container">
+        <ul>
+        {% for item in include.items %}
+            <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+</nav>
