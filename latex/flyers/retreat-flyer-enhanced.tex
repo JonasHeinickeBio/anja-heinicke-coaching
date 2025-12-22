@@ -1,5 +1,5 @@
 \documentclass[a4paper]{article}
-\usepackage[margin=1.8cm]{geometry}
+\usepackage[margin=1.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{setspace}
@@ -7,26 +7,16 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{qrcode}
-\usepackage{tikz}
 \usepackage{mdframed}
+\usepackage{eso-pic}
+\usepackage{transparent}
 
-% Font setup - fallback to standard fonts if Helvetica Neue not available
-\usepackage{fontspec}
-\ifx\XeTeXversion\undefined
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{lmodern}
-  \renewcommand{\familydefault}{\sfdefault} % Use sans-serif as default
-\else
-  \setmainfont{Helvetica Neue}[
-    Extension = .ttf,
-    UprightFont = *,
-  ]
-  \setsansfont{Helvetica Neue}[
-    Extension = .ttf,
-    UprightFont = *,
-  ]
-\fi
+% Use standard fonts instead of Helvetica Neue
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault} % Use sans-serif as default
 
 % Enhanced Toskana color palette
 \definecolor{toskanaGreen}{HTML}{5F7A60}
@@ -36,7 +26,7 @@
 \definecolor{toskanaCream}{HTML}{F5F1E8}
 
 % Custom commands for consistent styling
-\newcommand{\sectiontitle}[1]{\vspace{0.3cm}\textbf{\color{toskanaGreen}#1}\vspace{0.2cm}}
+\newcommand{\sectiontitle}[1]{\vspace{0.3cm}\textbf{\color{toskanaGreen}\large #1}\vspace{0.1cm}\\\rule{0.3\textwidth}{0.5pt}\vspace{0.2cm}}
 \newcommand{\highlight}[1]{\textcolor{toskanaBrown}{\textbf{#1}}}
 
 \pagestyle{empty}
@@ -49,15 +39,25 @@
 \begin{document}
 \pagecolor{toskanaCream}
 
+% Add background image
+\AddToShipoutPictureBG*{
+  \AtPageCenter{
+    \transparent{0.12}
+    \includegraphics[width=0.8\paperwidth,height=0.8\paperheight,keepaspectratio]{../../assets/images/about-image.jpg}
+  }
+}
+
 % Header with logo/title
 \begin{center}
-  \vspace{0.5cm}
-  {\Huge \color{toskanaGreen} \textbf{Coaching- \& Yoga-Retreat}}\\[0.3em]
-  {\large \color{toskanaBrown} \textit{Innehalten, auftanken, ausrichten}}\\[0.4em]
+  \vspace{0.3cm}
+  {\Huge \color{toskanaGreen} \textbf{Coaching- \& Yoga-Retreat}}\\[0.2em]
+  {\large \color{toskanaBrown} \textit{Innehalten, auftanken, ausrichten}}\\[0.3em]
   {\normalsize \color{toskanaOlive} Toskana · Elmo / Umgebung · Frühjahr 2025}
+  \vspace{0.2cm}
+  {\color{toskanaGreen}\rule{0.6\textwidth}{1pt}}
 \end{center}
 
-\vspace{0.8cm}
+\vspace{0.5cm}
 
 % Main content in two columns
 \begin{minipage}[t]{0.55\textwidth}
@@ -68,7 +68,7 @@
   In einer kleinen Gruppe von 4–8 Personen schaffen wir Raum für Stille, Reflexion
   und neue Perspektiven inmitten der toskanischen Landschaft.
 
-  \vspace{0.6cm}
+  \vspace{0.4cm}
   \sectiontitle{Inhalte}
 
   \begin{itemize}[leftmargin=*,itemsep=0.3em]
@@ -81,7 +81,7 @@
     \item Individuelle Coaching-Gespräche
   \end{itemize}
 
-  \vspace{0.6cm}
+  \vspace{0.4cm}
   \sectiontitle{Für wen}
 
   Für Menschen, die:
@@ -94,17 +94,6 @@
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.4\textwidth}
-  % Optional image placeholder
-  \begin{center}
-    \fbox{\parbox{0.9\textwidth}{\centering
-      \vspace{0.5cm}
-      \textit{Hier könnte ein Bild der Toskana stehen}
-      \vspace{0.5cm}
-    }}
-  \end{center}
-
-  \vspace{0.4cm}
-
   % Info box with enhanced styling
   \begin{mdframed}[
     linecolor=toskanaBrown,
@@ -130,7 +119,7 @@
     \textit{Optionale Verlängerungsnächte möglich.}
   \end{mdframed}
 
-  \vspace{0.5cm}
+  \vspace{0.3cm}
   \sectiontitle{Leitung}
 
   \highlight{Anja Heinicke}\\
@@ -138,7 +127,7 @@
   Achtsamkeits- und ressourcenorientierte Arbeitsweise.\\
   Spezialisiert auf Burnout-Prävention und Neuorientierung.
 
-  \vspace{0.5cm}
+  \vspace{0.3cm}
   \sectiontitle{Kontakt}
 
   Unverbindliches Vorgespräch (20–30 Min.) möglich.\\[0.3em]
@@ -155,11 +144,11 @@
 \end{minipage}
 
 % Footer
-\vspace{1cm}
+\vspace{0.7cm}
 \begin{center}
-  \hrulefill\\
-  \vspace{0.3cm}
-  {\small \color{toskanaOlive} "Die äußere Ruhe der Natur hilft Ihnen, Ihre innere Ruhe zu finden."}
+  {\color{toskanaGreen}\rule{0.4\textwidth}{0.8pt}}\\[0.2em]
+  {\small \color{toskanaOlive} \textit{"Die äußere Ruhe der Natur hilft Ihnen, Ihre innere Ruhe zu finden."}}\\[0.2em]
+  {\color{toskanaGreen}\rule{0.4\textwidth}{0.8pt}}
 \end{center}
 
 \end{document}

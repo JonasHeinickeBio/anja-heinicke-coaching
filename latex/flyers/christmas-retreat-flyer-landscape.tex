@@ -1,0 +1,222 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=0.8cm,landscape]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{qrcode}
+\usepackage{mdframed}
+\usepackage{eso-pic}
+\usepackage{transparent}
+\usepackage{tikz}
+
+% Use standard fonts instead of Helvetica Neue
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault} % Use sans-serif as default
+
+% Enhanced Christmas color palette
+\definecolor{toskanaGreen}{HTML}{5F7A60}
+\definecolor{toskanaSand}{HTML}{E9DFC7}
+\definecolor{toskanaBrown}{HTML}{8A5A44}
+\definecolor{toskanaOlive}{HTML}{708238}
+\definecolor{toskanaCream}{HTML}{F5F1E8}
+\definecolor{christmasRed}{HTML}{C41E3A}
+\definecolor{christmasGold}{HTML}{D4AF37}
+\definecolor{christmasGreen}{HTML}{165B33}
+\definecolor{christmasCream}{HTML}{FFF8DC}
+
+% Custom commands for consistent styling
+\newcommand{\sectiontitle}[1]{\vspace{0.08cm}\textbf{\color{christmasGreen}\LARGE #1}\vspace{0.02cm}\\\textcolor{christmasGold}{\rule{0.35\textwidth}{1.5pt}}\vspace{0.06cm}}
+\newcommand{\highlight}[1]{\textcolor{christmasRed}{\textbf{#1}}}
+\newcommand{\christmas}[1]{\textcolor{christmasRed}{\textbf{#1}}}
+\newcommand{\infobox}[1]{\vspace{0.05cm}\textbf{\color{christmasRed}#1}\vspace{0.02cm}}
+\newcommand{\ornament}{\tikz{\draw[christmasGold,line width=1pt] (0,0) -- (0.1,0.15) -- (0.2,0) -- (0.1,-0.15) -- cycle; \fill[christmasRed] (0.1,0.05) circle (0.02);}}
+
+\pagestyle{empty}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=toskanaBrown,
+    urlcolor=toskanaGreen
+}
+
+\begin{document}
+\pagecolor{toskanaCream}
+
+% Add background image with subtle transparency
+\AddToShipoutPictureBG*{
+  \AtPageLowerLeft{
+	\transparent{0.12}
+	\includegraphics[width=0.82\paperwidth,height=0.82\paperheight,keepaspectratio]{../../assets/images/about-image.jpg}
+  }
+}
+
+% Header with enhanced Christmas styling
+\begin{center}
+  \vspace{0.03cm}
+  {\ornament}\hspace{0.3cm}{\Huge \color{christmasRed} \textbf{Finde Deinen Weg!}}\hspace{0.3cm}{\ornament}\\[0.06em]
+  {\Large \color{christmasGreen} \textit{Coaching in der Natur}}\\[0.08em]
+  {\large \color{toskanaBrown} \textbf{*** Weihnachts-Special ***}}\\[0.06em]
+  {\normalsize \color{toskanaOlive} Toskana · Frühjahr 2025}
+  \vspace{0.06cm}
+  {\color{christmasGold}\rule{0.75\textwidth}{3pt}}
+\end{center}
+
+\vspace{0.12cm}
+
+% Main content optimized for landscape - balanced columns with better spacing
+\begin{minipage}[t]{0.63\textwidth}
+  \sectiontitle{Das Coaching Retreat}
+
+  Das Coaching Retreat bietet die Möglichkeit \textbf{inne zu halten} und eigene
+  Bewertungsmuster zu reflektieren. Themen wie: \highlight{"Sich selbst voll annehmen, wie ich
+  bin"}, stehen im Focus.
+
+  In \textbf{Bewegung in der Natur} können innere Schleifen wie die
+  \highlight{"Selbstoptimierung"} durchbrochen werden.
+
+  Die Aufmerksamkeit auf die \highlight{Einfachheit} zu lenken und tiefe
+  Zufriedenheit darin zu finden, ist eine zentrale Ausrichtung.
+
+  \vspace{0.22cm}
+  \sectiontitle{Die Schönheit der Natur}
+
+  Die Schönheit der Natur hilft Ihnen, Ihre innere Schönheit zu erkennen und
+  wertzuschätzen. Wie eine \textit{versteckte Perle}, die darauf wartet, entdeckt zu werden.
+
+  \christmas{Nutzen Sie die besinnliche Zeit nach Weihnachten, um Ihr Leben neu zu erfinden!}
+
+  \vspace{0.22cm}
+  \sectiontitle{Rahmen und Ablauf}
+
+  \begin{minipage}[t]{0.48\textwidth}
+    \textbf{1. Tag:} Ankommen \& Begrüßung\\[0.08cm]
+    \textbf{2. - 4. Tag:}\\
+    \quad 8.30 gemeinsames Frühstück\\
+    \quad 9.30 Individuelle Coaching-Sitzungen\\
+    \quad 13.00 Mediterranes „Pranzo"\\
+    \quad ab 14.00 Freie Zeit in der Natur\\[0.08cm]
+    \textbf{5. Tag:} Abschluss \& Ausklang
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \vspace{0.08cm}
+    \textbf{Setting:}\\
+    Tägliche Ortswechsel in der Toskana.\\
+    Kleine Gruppe von max. 4 Personen\\
+    für intensive, persönliche Betreuung.
+  \end{minipage}
+
+  \vspace{0.08cm}
+  Das Retreat ist bewusst mit Freiräumen gestaltet,
+  damit sich individuelle Entwicklungen natürlich entfalten können.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+  % Christmas Special Box - Enhanced
+  \begin{mdframed}[
+    linecolor=christmasRed,
+    backgroundcolor=christmasCream,
+    linewidth=4pt,
+    roundcorner=10pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    frametitle={\color{christmasRed}\textbf{*** Weihnachts-Special ***}},
+    frametitlebackgroundcolor=toskanaCream,
+    frametitlerule=true,
+    frametitlerulecolor=christmasGold,
+    frametitlerulewidth=2pt
+  ]
+    \christmas{Exklusives Angebot für die Weihnachtszeit!}\\
+    Nutzen Sie die besinnliche Zeit nach Weihnachten,
+    um Ihr Leben neu auszurichten und zu erfinden.
+  \end{mdframed}
+
+  \vspace{0.1cm}
+
+  % About me box - Enhanced
+  \begin{mdframed}[
+    linecolor=christmasGreen,
+    backgroundcolor=toskanaCream,
+    linewidth=3pt,
+    roundcorner=8pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    frametitle={\color{christmasGreen}\textbf{Über Anja Heinicke}},
+    frametitlebackgroundcolor=christmasCream
+  ]
+    Systemische Therapeutin, Supervisorin und Coach.\\
+    Achtsamkeit, Akzeptanz und Wertschätzung bilden das Fundament
+    meiner Arbeitsweise. Ressourcenorientierte Haltung für
+    nachhaltige Veränderungen.
+  \end{mdframed}
+
+  \vspace{0.1cm}
+
+  % Pricing box - Enhanced
+  \begin{mdframed}[
+    linecolor=christmasGold,
+    backgroundcolor=christmasCream,
+    linewidth=3pt,
+    roundcorner=8pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    frametitle={\color{christmasGold}\textbf{Preise}},
+    frametitlebackgroundcolor=toskanaCream,
+    frametitlerule=true,
+    frametitlerulecolor=christmasRed,
+    frametitlerulewidth=1pt
+  ]
+    \highlight{Coaching: 600 €}\\
+    \highlight{Übernachtung (inkl. Frühstück + vegetarisches Pranzo):}\\
+    400 € / 500 € (Einzel-/Doppelzimmer)\\
+    \highlight{Transfer Flughafen/Bahnhof: +100 €}\\
+    \highlight{Verlängerungsnacht: +40 €}
+  \end{mdframed}
+
+  \vspace{0.1cm}
+
+  % Contact box - Enhanced
+  \begin{mdframed}[
+    linecolor=toskanaBrown,
+    backgroundcolor=christmasCream,
+    linewidth=3pt,
+    roundcorner=8pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    frametitle={\color{toskanaBrown}\textbf{Kontakt}},
+    frametitlebackgroundcolor=toskanaCream
+  ]
+    \href{https://www.Deine-Wege-Coaching.de}{\texttt{www.Deine-Wege-Coaching.de}}\\[0.06em]
+    \href{mailto:anja.heinicke.coaching@gmail.com}{\texttt{anja.heinicke.coaching@gmail.com}}
+
+    \vspace{0.12cm}
+    % QR Code for website
+    \begin{center}
+      \qrcode[height=1.4cm]{https://www.Deine-Wege-Coaching.de}
+      \vspace{0.04cm}
+      {\scriptsize Website QR-Code}
+    \end{center}
+  \end{mdframed}
+\end{minipage}
+
+% Footer with improved spacing
+\vspace{0.2cm}
+\begin{center}
+  {\ornament}\hspace{0.2cm}{\color{christmasGold}\rule{0.4\textwidth}{1.5pt}}\hspace{0.2cm}{\ornament}\\[0.08em]
+  {\large \color{christmasGreen} \textit{"Die Natur lehrt uns, dass jeder Moment kostbar ist und wir in unserer eigenen Schönheit erstrahlen können."}}\\[0.08em]
+  {\ornament}\hspace{0.2cm}{\color{christmasGold}\rule{0.4\textwidth}{1.5pt}}\hspace{0.2cm}{\ornament}
+\end{center}
+
+\end{document}

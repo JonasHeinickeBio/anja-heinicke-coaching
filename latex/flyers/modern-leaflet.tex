@@ -1,9 +1,8 @@
 \documentclass[12pt,a4paper,foldmark,notumble]{leaflet}
 
-% Modern leaflet template with warm nature colors
+% Modern leaflet template with Toskana-inspired colors
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[provide=*]{babel}
 \usepackage[german]{babel}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -11,22 +10,26 @@
 \usepackage{tikz}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{qrcode}
 
-% Define warm nature color palette (Toscana-inspired)
-\definecolor{olivegreen}{rgb}{0.4, 0.5, 0.2}
-\definecolor{warmorange}{rgb}{0.8, 0.5, 0.2}
-\definecolor{terracotta}{rgb}{0.8, 0.4, 0.3}
-\definecolor{sagegreen}{rgb}{0.6, 0.7, 0.4}
-\definecolor{cream}{rgb}{0.98, 0.95, 0.9}
-\definecolor{darkolive}{rgb}{0.3, 0.4, 0.15}
+% Define enhanced Toskana color palette
+\definecolor{toskanaGreen}{HTML}{5F7A60}
+\definecolor{toskanaSand}{HTML}{E9DFC7}
+\definecolor{toskanaBrown}{HTML}{8A5A44}
+\definecolor{toskanaOlive}{HTML}{708238}
+\definecolor{toskanaCream}{HTML}{F5F1E8}
+\definecolor{warmorange}{HTML}{D2691E}
+\definecolor{terracotta}{HTML}{CD853F}
+\definecolor{sagegreen}{HTML}{9CAF88}
+\definecolor{darkolive}{HTML}{556B2F}
 
 % Set page colors
-\pagecolor{cream}
+\pagecolor{toskanaCream}
 \color{darkolive}
 
 % Custom commands for consistent styling
 \newcommand{\sectiontitle}[1]{\vspace{0.5cm}\textcolor{warmorange}{\large\bfseries#1}\vspace{0.3cm}}
-\newcommand{\highlight}[1]{\textcolor{olivegreen}{\bfseries#1}}
+\newcommand{\highlight}[1]{\textcolor{toskanaGreen}{\bfseries#1}}
 \newcommand{\contactinfo}[1]{\textcolor{terracotta}{#1}}
 
 % Remove default headers
@@ -44,7 +47,7 @@
 {\large\textcolor{olivegreen}{Systemische Coaching Retreats in der Natur}}
 
 \vspace{0.5cm}
-\includegraphics[width=0.8\textwidth]{../assets/images/hero-image.jpg}
+\includegraphics[width=0.8\textwidth]{../../assets/images/hero-image.jpg}
 
 \vspace{0.5cm}
 {\itshape\textcolor{sagegreen}{Eine Einladung zur Veränderung}}
@@ -117,7 +120,7 @@ Systemische Therapeutin, Supervisorin \& Coach
 Achtsamkeit, Akzeptanz und Wertschätzung bilden die Grundsäulen meiner Arbeit. Eine ressourcenorientierte Haltung ermöglicht es, verdeckte Stärken wieder zugänglich zu machen.
 
 \vspace{0.3cm}
-\includegraphics[width=0.6\textwidth]{../assets/images/about-image.jpg}
+\includegraphics[width=0.6\textwidth]{../../assets/images/about-image.jpg}
 \end{minipage}
 
 % Back page right - Contact and practical info

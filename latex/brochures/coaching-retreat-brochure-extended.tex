@@ -1,0 +1,438 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[provide=*]{babel}
+\usepackage{geometry}
+\geometry{margin=1in, headheight=14pt}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=toskanaGreen,
+    urlcolor=toskanaGreen,
+    pdftitle={Finde Deinen Weg! - Systemische Coaching Retreats},
+    pdfauthor={Anja Heinicke},
+    pdfsubject={Coaching Retreat Broschüre}
+}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{eso-pic}
+\usepackage{transparent}
+\usepackage{tikz}
+\usepackage{mdframed}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{needspace}
+
+% Enhanced Toskana-inspired color palette with nature tones
+\definecolor{toskanaGreen}{HTML}{5F7A60}
+\definecolor{toskanaSand}{HTML}{E9DFC7}
+\definecolor{toskanaBrown}{HTML}{8A5A44}
+\definecolor{toskanaOlive}{HTML}{708238}
+\definecolor{toskanaCream}{HTML}{F5F1E8}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\definecolor{lightblue}{rgb}{0.68, 0.85, 0.9}
+\definecolor{warmbrown}{rgb}{0.6, 0.4, 0.2}
+\definecolor{sagegreen}{HTML}{9CAF88}
+\definecolor{terracotta}{HTML}{CD853F}
+\definecolor{darkText}{HTML}{2C3E50}
+\definecolor{mediumText}{HTML}{34495E}
+\definecolor{lightText}{HTML}{7F8C8D}
+
+% Elegant page background with subtle gradient
+\AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+        \put(0,0){%
+            \begin{tikzpicture}[remember picture, overlay]
+                \fill[toskanaCream!15] (current page.south west) rectangle (current page.north east);
+                \fill[toskanaGreen!3] (current page.south west) rectangle ([yshift=2cm]current page.north west) -- ([yshift=2cm]current page.north east) -- (current page.north east) -- cycle;
+                \fill[toskanaSand!8] ([yshift=1cm]current page.south west) rectangle ([yshift=3cm]current page.south east);
+            \end{tikzpicture}%
+        }%
+    }%
+}
+
+\geometry{margin=1.2in, headheight=16pt, headsep=0.5in, footskip=0.5in}
+
+% Improved fancy header with better contrast
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{darkText}{\small \itshape Finde Deinen Weg}}
+\fancyhead[R]{\textcolor{darkText}{\small \thepage}}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\headrule}{\color{toskanaGreen!40}\hrule width\headwidth height\headrulewidth}
+
+% Enhanced section formatting with better spacing and contrast
+\titleformat{\section}{\Large\bfseries\color{darkText}}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{1.5em}{1.2em}
+
+% Enhanced subsection formatting
+\titleformat{\subsection}{\large\bfseries\color{mediumText}}{\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{0pt}{1.2em}{0.8em}
+
+\tcbset{
+    naturebox/.style={
+        colback=toskanaCream!25,
+        colframe=toskanaGreen!60,
+        boxrule=1.5pt,
+        rounded corners=all,
+        arc=4mm,
+        fonttitle=\bfseries\color{darkText},
+        fontupper=\color{darkText},
+        before skip=1em,
+        after skip=1em,
+        left=1em,
+        right=1em,
+        top=1em,
+        bottom=1em
+    },
+    highlightbox/.style={
+        colback=toskanaSand!20,
+        colframe=toskanaOlive!50,
+        boxrule=2pt,
+        rounded corners=all,
+        arc=6mm,
+        drop shadow={toskanaBrown!20!black},
+        fonttitle=\large\bfseries\color{darkText},
+        fontupper=\color{mediumText},
+        before skip=1.5em,
+        after skip=1.5em,
+        left=1.2em,
+        right=1.2em,
+        top=1.2em,
+        bottom=1.2em
+    },
+    contentbox/.style={
+        colback=white!95,
+        colframe=toskanaGreen!30,
+        boxrule=1pt,
+        rounded corners=all,
+        arc=3mm,
+        fontupper=\color{darkText},
+        before skip=0.8em,
+        after skip=0.8em,
+        left=0.8em,
+        right=0.8em,
+        top=0.8em,
+        bottom=0.8em
+    }
+}
+
+% Define contentbox environment
+\newenvironment{contentbox}{\begin{tcolorbox}[contentbox]}{\end{tcolorbox}}
+
+% Enhanced quote environment with better styling
+\newenvironment{naturequote}{%
+    \begin{tcolorbox}[naturebox, title=Inspiration, coltitle=darkText]
+    \itshape\large\color{mediumText}
+}{%
+    \end{tcolorbox}
+}
+
+% Better spacing throughout document
+\setstretch{1.1}
+\setlength{\parskip}{0.5em}
+
+% Enhanced title page with elegant spacing
+\title{%
+    \vspace{1cm}
+    {\Huge\bfseries\textcolor{darkText}{Finde Deinen Weg!}} \\
+    \vspace{0.8cm}
+    {\Large\textcolor{mediumText}{Systemische Coaching Retreats in der Natur}} \\
+    \vspace{1.2cm}
+    {\large\textcolor{toskanaGreen}{Eine Einladung zur persönlichen Transformation}}
+}
+\author{\textcolor{mediumText}{\large Anja Heinicke}}
+\date{\textcolor{toskanaGreen}{2025}}
+
+\begin{document}
+
+% Title page with elegant layout
+\maketitle
+\thispagestyle{empty}
+
+% Decorative separator
+\vspace{2cm}
+\begin{center}
+    \begin{tikzpicture}
+        \draw[toskanaGreen, line width=2pt] (0,0) -- (2,0);
+        \fill[toskanaGreen] (2.2,0) circle (2pt);
+        \draw[toskanaGreen, line width=2pt] (2.4,0) -- (4.4,0);
+        \fill[toskanaGreen] (4.6,0) circle (2pt);
+        \draw[toskanaGreen, line width=2pt] (4.8,0) -- (6.8,0);
+    \end{tikzpicture}
+\end{center}
+
+\vspace{1cm}
+\begin{naturequote}
+    \centering
+    \emph{"Die Natur tut das, was sie kann. Wir Menschen müssen das tun, was wir können."} \\
+    \vspace{0.5em}
+    \small --- Viktor E. Frankl
+\end{naturequote}
+
+\newpage
+
+% Introduction section with enhanced styling
+\section{Finde Deinen Weg!}
+
+\begin{contentbox}
+\subsection{Systemische Coaching Retreats in der Natur}
+
+\begin{naturequote}
+\emph{"So geht es nicht weiter! -- Aber wie?"} \\
+Diese Frage markiert oft den Beginn einer tiefgreifenden Veränderung.
+\end{naturequote}
+
+In unseren exklusiven Coaching Retreats in der Natur begleiten wir Sie auf einer intensiven Reise der Selbstentdeckung. Hier können Sie neue Ideen und Ansätze entwickeln, die Ihren Weg in die Zukunft ebnen.
+
+\begin{contentbox}
+Die majestätische Ruhe der Natur dient als Spiegel für Ihre innere Welt. Lassen Sie die friedliche Atmosphäre auf sich wirken und finden Sie zurück zu Ihrem authentischen Selbst.
+\end{contentbox}
+
+\begin{contentbox}
+Die zeitlose Schönheit der Natur erinnert uns daran, dass auch in uns eine verborgene Schönheit schlummert -- wie eine kostbare Perle, die darauf wartet, entdeckt zu werden.
+\end{contentbox}
+
+Die bewusste Hinwendung zur Einfachheit, ihre Wertschätzung und das Finden tiefer Zufriedenheit darin bilden das Herzstück unseres Coaching-Ansatzes.
+\end{contentbox}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.85\textwidth]{../../assets/images/hero-image.jpg}}
+    \caption*{\small\textit{Wo die Stille der Natur Ihre innere Stimme erwachen lässt}}
+\end{figure}
+
+\newpage
+
+\section{Das Angebot}
+
+\begin{contentbox}
+\subsection{Klein und Persönlich -- Intimität als Stärke}
+\begin{contentbox}
+Wir pflegen bewusst eine intime Atmosphäre mit maximal 4 Teilnehmenden. Diese Beschränkung ermöglicht einen geschützten Raum für tiefe, authentische Begegnungen und intensive persönliche Auseinandersetzung. Hier entsteht Vertrauen, das transformative Prozesse ermöglicht.
+\end{contentbox}
+
+\subsection{Natur als Therapeutin -- Die Weisheit der Elemente}
+\begin{contentbox}
+Jeden Tag erkunden wir verschiedene Orte in dieser wundervollen Region. Die vollkommene Schönheit der Natur dient als lebendiger Spiegel und unerschöpfliche Quelle der Inspiration. Wälder flüstern uns Geheimnisse zu, Bäche erzählen von der Kraft des Fließens, und Berge erinnern uns an unsere eigene Größe.
+\end{contentbox}
+
+\subsection{Raum für Entfaltung -- Freiheit zur Transformation}
+\begin{contentbox}
+Unser Retreat ist bewusst mit großzügigen Freiräumen gestaltet. Diese ermöglichen es individuellen Entwicklungen, sich natürlich zu entfalten. Bewegung in der Natur bringt nicht nur den Körper in Fluss, sondern auch Gedanken und Ideen beginnen zu strömen und neue Verbindungen zu knüpfen.
+\end{contentbox}
+\end{contentbox}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \fbox{\includegraphics[width=\textwidth]{../../assets/images/nature-image.jpg}}
+        \caption*{\small\textit{Der Wald als Spiegel Ihrer inneren Weisheit}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \fbox{\includegraphics[width=\textwidth]{../../assets/images/about-image.jpg}}
+        \caption*{\small\textit{Wo Ihre authentische Essenz erblüht}}
+    \end{minipage}
+\end{figure}
+
+\newpage
+
+\section{Coaching Themen}
+
+\begin{contentbox}
+Im systemischen Coaching begleiten wir Sie bei der Bearbeitung Ihrer individuellen Themen. Jedes Thema ist eine Einladung zum Wachstum, jedes Gespräch ein Schritt näher zu Ihrer authentischen Essenz.
+
+Hier eine Auswahl der Themen, die wir gemeinsam erkunden können:
+\end{contentbox}
+
+\vspace{1em}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{\raggedright}p{4cm}>{\raggedright}p{8cm}@{}}
+\toprule
+\rowcolor{toskanaCream!30} \textcolor{darkText}{\textbf{Thema}} & \textcolor{darkText}{\textbf{Mögliche Entdeckungen}} \\
+\midrule
+\textcolor{darkText}{\textbf{Burnout \& Prävention}} & \textcolor{mediumText}{Frühzeitige Erkennung von Erschöpfungssignalen, Entwicklung nachhaltiger Strategien für Work-Life-Balance, Wiederentdeckung innerer Kraftquellen} \\
+\midrule
+\textcolor{darkText}{\textbf{Self-Care}} & \textcolor{mediumText}{Tägliche Rituale der Selbstfürsorge etablieren, Grenzen achtsam setzen, Selbstmitgefühl als Weg zur Heilung} \\
+\midrule
+\textcolor{darkText}{\textbf{Grenzen ziehen}} & \textcolor{mediumText}{Authentische Kommunikation persönlicher Grenzen, Schutz des eigenen Energieraums, respektvolle Beziehungen gestalten} \\
+\midrule
+\textcolor{darkText}{\textbf{Selbstannahme}} & \textcolor{mediumText}{Das eigene Sein bedingungslos annehmen, Selbstkritik transformieren, innere Frieden finden} \\
+\midrule
+\textcolor{darkText}{\textbf{Entscheidungsfindung}} & \textcolor{mediumText}{Intuition als Kompass nutzen, von äußeren Erwartungen befreien, Entscheidungen aus dem Herzen treffen} \\
+\midrule
+\textcolor{darkText}{\textbf{Selbstwertgefühl}} & \textcolor{mediumText}{Innere Würde erkennen und stärken, von Selbstzweifeln befreien, Selbstliebe kultivieren} \\
+\midrule
+\textcolor{darkText}{\textbf{Selbstoptimierung hinterfragen}} & \textcolor{mediumText}{Vom Druck der Perfektion befreien, Authentizität über Optimierung stellen, innere Ruhe finden} \\
+\midrule
+\textcolor{darkText}{\textbf{Eigenverantwortung}} & \textcolor{mediumText}{Selbstwirksamkeit entwickeln, Handlungsfähigkeit stärken, Lebensgestaltung bewusst wählen} \\
+\midrule
+\textcolor{darkText}{\textbf{Coping Strategien}} & \textcolor{mediumText}{Resilienz aufbauen, mit Veränderungen umgehen, innere Stärke aktivieren} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+\begin{naturequote}
+    Jedes Thema ist ein Samen, der in der richtigen Erde -- Ihrem Herzen -- zu einem Baum des Wachstums werden kann.
+\end{naturequote}
+
+\newpage
+
+\section{Ablauf des 5-Tage Retreats}
+
+\begin{contentbox}
+Unser 5-tägiges Retreat ist sorgfältig strukturiert, um Ihnen maximale Entfaltungsmöglichkeiten zu bieten. Jeder Tag ist eine Einladung, tiefer in Ihre Essenz einzutauchen und neue Perspektiven zu entdecken.
+\end{contentbox}
+
+\subsection{Tag 1: Ankommen -- Die Reise beginnt}
+\begin{contentbox}
+\textbf{Ankunft und Begrüßung} \\
+Ihre Ankunft ist der erste Schritt einer tiefgreifenden Veränderung. Wir nehmen uns Zeit für eine herzliche Begrüßung und erste Orientierung in dieser besonderen Umgebung.
+
+\textbf{Erste Schritte} \\
+Gemeinsam erkunden wir den Raum, der für die nächsten Tage Ihr Zuhause sein wird. Eine sanfte Einführung in die Natur rundum schafft die Basis für Ihre persönliche Reise.
+
+\textbf{Abendliche Reflexion} \\
+Der Tag endet mit einer gemeinsamen Meditation, die Ihnen hilft, anzukommen und den Alltag hinter sich zu lassen.
+\end{contentbox}
+
+\subsection{Tage 2–4: Kernprogramm -- Die Tiefe der Transformation}
+\begin{contentbox}
+\textbf{Morgendliche Achtsamkeit (8:00 Uhr)} \\
+Optionale gemeinsame Meditation oder Achtsamkeitsübungen zur Verankerung im Hier und Jetzt.
+
+\textbf{Gemeinsames Frühstück (8:30 Uhr)} \\
+Nährende Mahlzeiten in entspannter Atmosphäre -- Zeit für informelle Gespräche und erste Verbindungen.
+
+\textbf{Coaching-Sitzungen (9:30 Uhr)} \\
+Intensive, individuelle Coaching-Sitzungen, die auf Ihre persönlichen Themen und Bedürfnisse zugeschnitten sind.
+
+\textbf{Mittagspause (13:00 Uhr)} \\
+Zeit für Ruhe, Verdauung und persönliche Reflexion -- Pranzo als Ritual der Besinnung.
+
+\textbf{Nachmittag \& Abend (ab 14:00 Uhr)} \\
+Individuelle Gestaltungsmöglichkeiten: \\
+\begin{itemize}
+    \item Ausflüge zu sehenswerten Orten der Region
+    \item Persönliche Spaziergänge in der Natur
+    \item Kreative Ausdrucksformen (Journaling, Zeichnen, etc.)
+    \item Gemeinsame Abendessen mit tiefgehenden Gesprächen
+\end{itemize}
+\end{contentbox}
+
+\subsection{Tag 5: Abschluss -- Integration und Ausblick}
+\begin{contentbox}
+\textbf{Reflexion} \\
+Zeit, um die Erfahrungen der vergangenen Tage zu integrieren und zu verarbeiten.
+
+\textbf{Ausblick} \\
+Entwicklung konkreter Schritte für die Zeit nach dem Retreat -- wie Sie die gewonnene Klarheit in Ihren Alltag tragen können.
+
+\textbf{Verabschiedung} \\
+Ein herzliches Abschiednehmen mit dem Wissen, dass diese Erfahrung ein Teil von Ihnen bleibt.
+\end{contentbox}
+
+\subsection{Zusätzliche Angebote -- Bereicherung Ihrer Reise}
+\begin{contentbox}
+\begin{itemize}
+    \item \textbf{Naturerkundungen:} Geführte Ausflüge zu besonderen Orten mit anschließenden gemeinsamen Abendessen
+    \item \textbf{Achtsamkeitspraktiken:} Gemeinsame Meditationen zur Stressbewältigung und inneren Ruhe
+    \item \textbf{Kreative Prozesse:} Raum für individuelle Aktivitäten wie Schreiben, Malen oder andere Ausdrucksformen
+    \item \textbf{Kulinarische Erfahrungen:} Bewusste Ernährung mit regionalen, frischen Zutaten
+    \item \textbf{Bewegungsangebote:} Sanfte Yoga-Einheiten oder Spaziergänge zur Körper-Geist-Verbindung
+\end{itemize}
+\end{contentbox}
+
+\newpage
+
+\section{Über mich und meine Arbeitsweise}
+
+\begin{contentbox}
+\subsection{Systemische Therapeutin, Supervisorin und Coach}
+
+\begin{minipage}{0.6\textwidth}
+Achtsamkeit, Akzeptanz und Wertschätzung bilden die drei Säulen meiner therapeutischen Arbeit. Diese Grundhaltung ermöglicht es Ihnen, sich in einem absolut geschützten Raum für neue Erfahrungen zu öffnen und Veränderungsprozesse mutig einzugehen.
+
+Meine ressourcenorientierte Haltung ist dabei grundlegend: Jeder Mensch verfügt über innere Ressourcen, die manchmal verschüttet oder vergessen sind. Im Coaching geht es darum, diese Schätze wieder zu entdecken und zugänglich zu machen.
+
+Im gemeinsamen Prozess lernen Sie, Ihre Aufmerksamkeit auf Ihr inneres Wissen zu lenken -- jenes tiefe, authentische Wissen, das oft von äußeren Erwartungen und gesellschaftlichen Normen überlagert wird. Hier finden Sie zurück zu Ihrem inneren Frieden.
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{../../assets/images/about-image.jpg}}
+    \vspace{0.5em}
+    {\small\textit{Anja Heinicke}}
+\end{minipage}
+
+\end{contentbox}
+
+\subsection{Die Frage nach dem "Statt dessen" -- Ein systemischer Ansatz}
+\begin{contentbox}
+Der Wunsch, Probleme einfach "verschwinden" zu lassen, ist absolut nachvollziehbar. Doch oft führt dieser Ansatz dazu, dass die Herausforderungen sich verstärken oder in anderer Form wieder auftauchen.
+
+Die systemische Frage nach dem \emph{"Statt dessen"} eröffnet neue Möglichkeiten: Anstatt gegen etwas zu kämpfen, erkunden wir gemeinsam, was an die Stelle der aktuellen Schwierigkeiten treten könnte.
+
+Diese Herangehensweise ermöglicht es Ihnen, neue Perspektiven zu entwickeln und kreative Lösungen zu finden, die zu Ihrem authentischen Leben passen.
+
+\textbf{Ihr inneres Wissen ist unschätzbar wertvoll. Es lohnt sich, diesem zu vertrauen und es als zuverlässigen Kompass für Ihre Entscheidungen zu nutzen.}
+\end{contentbox}
+
+\begin{naturequote}
+    \centering
+    "Die Natur lehrt uns nicht nur Geduld, sondern auch, dass jede Jahreszeit ihren eigenen Zauber hat -- und dass Veränderung der natürliche Lauf des Lebens ist."
+\end{naturequote}
+
+\newpage
+
+\section{Kontakt}
+
+\begin{contentbox}
+\begin{center}
+\textbf{Anja Heinicke} \\
+\textit{Systemische Therapeutin • Supervisorin • Coach} \\
+Spezialisiert auf systemisches Coaching in der Natur für persönliche Neuausrichtung und Ressourcenentdeckung.
+
+\vspace{1em}
+{\large\textbf{E-Mail:} \href{mailto:anja.heinicke.coaching@gmail.com}{anja.heinicke.coaching@gmail.com}}
+
+\vspace{1em}
+Ich freue mich auf Ihre Nachricht und darauf, Sie auf Ihrer persönlichen Entdeckungsreise zu begleiten.
+\end{center}
+\end{contentbox}
+
+\vspace{2cm}
+
+\begin{naturequote}
+    \centering
+    "Jeder Weg beginnt mit einem einzigen Schritt. \\
+    Ihr erster Schritt könnte genau jetzt sein."
+\end{naturequote}
+
+\vspace{2cm}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[toskanaGreen, line width=3pt] (0,0) -- (8,0);
+        \fill[toskanaGreen] (8.3,0) circle (3pt);
+        \node[toskanaBrown, font=\small\itshape] at (4,-0.8) {Finde Deinen Weg};
+    \end{tikzpicture}
+\end{center}
+
+\vspace{1cm}
+\begin{center}
+    \small\textit{Diese Broschüre wurde mit Sorgfalt für Sie erstellt. \\
+    Alle Inhalte basieren auf langjähriger therapeutischer Erfahrung und dem Respekt vor der menschlichen Natur.}
+\end{center}
+
+\end{document}
