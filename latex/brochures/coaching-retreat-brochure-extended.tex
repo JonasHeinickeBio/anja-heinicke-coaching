@@ -27,6 +27,8 @@
 \usepackage{parskip}
 \usepackage{titlesec}
 \usepackage{needspace}
+\usepackage{array}
+\usepackage{colortbl}
 
 % Enhanced Toskana-inspired color palette with nature tones
 \definecolor{toskanaGreen}{HTML}{5F7A60}
@@ -56,7 +58,7 @@
     }%
 }
 
-\geometry{margin=1.2in, headheight=16pt, headsep=0.5in, footskip=0.5in}
+\geometry{margin=1.5in, headheight=16pt, headsep=0.5in, footskip=0.5in}
 
 % Improved fancy header with better contrast
 \pagestyle{fancy}
@@ -125,6 +127,23 @@
 % Define contentbox environment
 \newenvironment{contentbox}{\begin{tcolorbox}[contentbox]}{\end{tcolorbox}}
 
+% Define decorative elements
+\newcommand{\leafdivider}{
+    \vspace{1em}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[toskanaGreen, line width=2pt] (0,0) -- (1,0);
+            \fill[toskanaGreen] (1.2,0) circle (2pt);
+            \draw[toskanaGreen, line width=2pt] (1.4,0) -- (3.4,0);
+            \fill[toskanaGreen] (3.6,0) circle (2pt);
+            \draw[toskanaGreen, line width=2pt] (3.8,0) -- (5.8,0);
+            % Add a small leaf
+            \fill[toskanaGreen!80] (6,0.1) -- (6.3,0.3) -- (6.1,0.5) -- (5.9,0.3) -- cycle;
+        \end{tikzpicture}
+    \end{center}
+    \vspace{1em}
+}
+
 % Enhanced quote environment with better styling
 \newenvironment{naturequote}{%
     \begin{tcolorbox}[naturebox, title=Inspiration, coltitle=darkText]
@@ -156,18 +175,7 @@
 \thispagestyle{empty}
 
 % Decorative separator
-\vspace{2cm}
-\begin{center}
-    \begin{tikzpicture}
-        \draw[toskanaGreen, line width=2pt] (0,0) -- (2,0);
-        \fill[toskanaGreen] (2.2,0) circle (2pt);
-        \draw[toskanaGreen, line width=2pt] (2.4,0) -- (4.4,0);
-        \fill[toskanaGreen] (4.6,0) circle (2pt);
-        \draw[toskanaGreen, line width=2pt] (4.8,0) -- (6.8,0);
-    \end{tikzpicture}
-\end{center}
-
-\vspace{1cm}
+\leafdivider
 \begin{naturequote}
     \centering
     \emph{"Die Natur tut das, was sie kann. Wir Menschen müssen das tun, was wir können."} \\
@@ -201,6 +209,8 @@ Die zeitlose Schönheit der Natur erinnert uns daran, dass auch in uns eine verb
 Die bewusste Hinwendung zur Einfachheit, ihre Wertschätzung und das Finden tiefer Zufriedenheit darin bilden das Herzstück unseres Coaching-Ansatzes.
 \end{contentbox}
 
+\leafdivider
+
 \begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.85\textwidth]{../../assets/images/hero-image.jpg}}
@@ -228,6 +238,8 @@ Unser Retreat ist bewusst mit großzügigen Freiräumen gestaltet. Diese ermögl
 \end{contentbox}
 \end{contentbox}
 
+\leafdivider
+
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.48\textwidth}
@@ -253,38 +265,24 @@ Hier eine Auswahl der Themen, die wir gemeinsam erkunden können:
 
 \vspace{1em}
 
-\begin{table}[h]
-\centering
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{@{}>{\raggedright}p{4cm}>{\raggedright}p{8cm}@{}}
-\toprule
-\rowcolor{toskanaCream!30} \textcolor{darkText}{\textbf{Thema}} & \textcolor{darkText}{\textbf{Mögliche Entdeckungen}} \\
-\midrule
-\textcolor{darkText}{\textbf{Burnout \& Prävention}} & \textcolor{mediumText}{Frühzeitige Erkennung von Erschöpfungssignalen, Entwicklung nachhaltiger Strategien für Work-Life-Balance, Wiederentdeckung innerer Kraftquellen} \\
-\midrule
-\textcolor{darkText}{\textbf{Self-Care}} & \textcolor{mediumText}{Tägliche Rituale der Selbstfürsorge etablieren, Grenzen achtsam setzen, Selbstmitgefühl als Weg zur Heilung} \\
-\midrule
-\textcolor{darkText}{\textbf{Grenzen ziehen}} & \textcolor{mediumText}{Authentische Kommunikation persönlicher Grenzen, Schutz des eigenen Energieraums, respektvolle Beziehungen gestalten} \\
-\midrule
-\textcolor{darkText}{\textbf{Selbstannahme}} & \textcolor{mediumText}{Das eigene Sein bedingungslos annehmen, Selbstkritik transformieren, innere Frieden finden} \\
-\midrule
-\textcolor{darkText}{\textbf{Entscheidungsfindung}} & \textcolor{mediumText}{Intuition als Kompass nutzen, von äußeren Erwartungen befreien, Entscheidungen aus dem Herzen treffen} \\
-\midrule
-\textcolor{darkText}{\textbf{Selbstwertgefühl}} & \textcolor{mediumText}{Innere Würde erkennen und stärken, von Selbstzweifeln befreien, Selbstliebe kultivieren} \\
-\midrule
-\textcolor{darkText}{\textbf{Selbstoptimierung hinterfragen}} & \textcolor{mediumText}{Vom Druck der Perfektion befreien, Authentizität über Optimierung stellen, innere Ruhe finden} \\
-\midrule
-\textcolor{darkText}{\textbf{Eigenverantwortung}} & \textcolor{mediumText}{Selbstwirksamkeit entwickeln, Handlungsfähigkeit stärken, Lebensgestaltung bewusst wählen} \\
-\midrule
-\textcolor{darkText}{\textbf{Coping Strategien}} & \textcolor{mediumText}{Resilienz aufbauen, mit Veränderungen umgehen, innere Stärke aktivieren} \\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{itemize}[leftmargin=*, itemsep=0.5em]
+    \item \textbf{Burnout \& Prävention:} Frühzeitige Erkennung von Erschöpfungssignalen, Entwicklung nachhaltiger Strategien für Work-Life-Balance, Wiederentdeckung innerer Kraftquellen
+    \item \textbf{Self-Care:} Tägliche Rituale der Selbstfürsorge etablieren, Grenzen achtsam setzen, Selbstmitgefühl als Weg zur Heilung
+    \item \textbf{Grenzen ziehen:} Authentische Kommunikation persönlicher Grenzen, Schutz des eigenen Energieraums, respektvolle Beziehungen gestalten
+    \item \textbf{Selbstannahme:} Das eigene Sein bedingungslos annehmen, Selbstkritik transformieren, innere Frieden finden
+    \item \textbf{Entscheidungsfindung:} Intuition als Kompass nutzen, von äußeren Erwartungen befreien, Entscheidungen aus dem Herzen treffen
+    \item \textbf{Selbstwertgefühl:} Innere Würde erkennen und stärken, von Selbstzweifeln befreien, Selbstliebe kultivieren
+    \item \textbf{Selbstoptimierung hinterfragen:} Vom Druck der Perfektion befreien, Authentizität über Optimierung stellen, innere Ruhe finden
+    \item \textbf{Eigenverantwortung:} Selbstwirksamkeit entwickeln, Handlungsfähigkeit stärken, Lebensgestaltung bewusst wählen
+    \item \textbf{Coping Strategien:} Resilienz aufbauen, mit Veränderungen umgehen, innere Stärke aktivieren
+\end{itemize}
 
 \vspace{1em}
 \begin{naturequote}
     Jedes Thema ist ein Samen, der in der richtigen Erde -- Ihrem Herzen -- zu einem Baum des Wachstums werden kann.
 \end{naturequote}
+
+\leafdivider
 
 \newpage
 
@@ -404,7 +402,11 @@ Diese Herangehensweise ermöglicht es Ihnen, neue Perspektiven zu entwickeln und
 Spezialisiert auf systemisches Coaching in der Natur für persönliche Neuausrichtung und Ressourcenentdeckung.
 
 \vspace{1em}
-{\large\textbf{E-Mail:} \href{mailto:anja.heinicke.coaching@gmail.com}{anja.heinicke.coaching@gmail.com}}
+{\large\textbf{E-Mail:} \href{mailto:anja.heinicke.coaching@gmail.com}{anja.heinicke.coaching@gmail.com}} \\
+{\large\textbf{Website:} \href{https://www.deine-wege-coaching.de}{www.deine-wege-coaching.de}}
+
+\vspace{1em}
+{\large\textbf{QR-Code:} Scannen Sie den QR-Code, um direkt zu meiner Website zu gelangen.}
 
 \vspace{1em}
 Ich freue mich auf Ihre Nachricht und darauf, Sie auf Ihrer persönlichen Entdeckungsreise zu begleiten.
