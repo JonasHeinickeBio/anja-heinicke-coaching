@@ -1,8 +1,1 @@
-# Custom domain configuration for GitHub Pages
-# This file tells GitHub Pages which domains to serve this site on
-
-# Apex domain (main domain)
 deine-wege-coaching.de
-
-# WWW subdomain (optional, for www.deine-wege-coaching.de)
-www.deine-wege-coaching.de
