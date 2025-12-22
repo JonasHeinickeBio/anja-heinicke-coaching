@@ -70,7 +70,16 @@ body {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
 }
 
 .hero h1 {
@@ -412,18 +421,91 @@ body {
     }
 }
 
-/* Print Styles */
-@media print {
-    .navigation {
-        position: static;
+/* Services Overview */
+.services-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.service-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8B6F47;
+}
+
+.service-item ul {
+    margin: 1rem 0 0 1.5rem;
+}
+
+.service-item li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Images */
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.offer-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
     }
     
-    .hero {
-        min-height: auto;
-        padding: 40px 20px;
+    .hero-text {
+        text-align: center;
     }
     
-    .section {
-        page-break-inside: avoid;
+    .hero-image,
+    .about-image,
+    .offer-image {
+        max-width: 100%;
+        margin: 1rem 0;
+    }
+    
+    .about-image {
+        max-width: 250px;
+    }
+    
+    .services-overview {
+        grid-template-columns: 1fr;
     }
 }
