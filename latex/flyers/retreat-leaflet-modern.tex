@@ -1,0 +1,153 @@
+\documentclass[12pt,a4paper,foldmark,notumble]{leaflet}
+
+% Modern leaflet template with Toskana-inspired colors
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman,provide=*]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{qrcode}
+
+% Define enhanced Toskana color palette
+\definecolor{toskanaGreen}{HTML}{5F7A60}
+\definecolor{toskanaSand}{HTML}{E9DFC7}
+\definecolor{toskanaBrown}{HTML}{8A5A44}
+\definecolor{toskanaOlive}{HTML}{708238}
+\definecolor{toskanaCream}{HTML}{F5F1E8}
+\definecolor{warmorange}{HTML}{D2691E}
+\definecolor{terracotta}{HTML}{CD853F}
+\definecolor{sagegreen}{HTML}{9CAF88}
+\definecolor{darkolive}{HTML}{556B2F}
+
+% Set page colors
+\pagecolor{toskanaCream}
+\color{darkolive}
+
+% Custom commands for consistent styling
+\newcommand{\sectiontitle}[1]{\vspace{0.5cm}\textcolor{warmorange}{\large\bfseries#1}\vspace{0.3cm}}
+\newcommand{\highlight}[1]{\textcolor{toskanaGreen}{\bfseries#1}}
+\newcommand{\contactinfo}[1]{\textcolor{terracotta}{#1}}
+
+% Remove default headers
+\pagestyle{empty}
+
+\begin{document}
+
+% Front page - Title and main image
+\begin{minipage}[t][0.5\textheight]{\linewidth}
+\centering
+\vspace{1cm}
+{\Huge\bfseries\textcolor{darkolive}{Finde Deinen Weg!}}
+
+\vspace{0.5cm}
+{\large\textcolor{darkolive}{Systemische Coaching Retreats in der Natur}}
+
+\vspace{0.5cm}
+\includegraphics[width=0.8\textwidth]{../../assets/images/hero-image.jpg}
+
+\vspace{0.5cm}
+{\large\itshape\textcolor{sagegreen}{Eine Einladung zur Veränderung}}
+\end{minipage}
+
+% Back of front page - Introduction
+\begin{minipage}[t][0.5\textheight]{\linewidth}
+\sectiontitle{Das Angebot}
+
+\begin{itemize}[leftmargin=*,itemsep=0.3cm]
+\item \highlight{Klein und persönlich:} Max. 4 Personen für intensive Betreuung
+\item \highlight{Natur als Therapeutin:} Tägliche Ausflüge an inspirierende Orte
+\item \highlight{Raum für Entfaltung:} Individuelle Entwicklung in friedlicher Atmosphäre
+\end{itemize}
+
+\vspace{0.5cm}
+\textit{"Die äußere Ruhe der Natur hilft Ihnen, Ihre innere Ruhe zu finden."}
+\end{minipage}
+
+% Inside left - Program details
+\begin{minipage}[t]{\linewidth}
+\sectiontitle{5-Tage Retreat Programm}
+
+\textbf{Tag 1: Ankommen} \\
+Ankunft und erste Orientierung in der neuen Umgebung.
+
+\vspace{0.3cm}
+\textbf{Tage 2–4: Kernprogramm}
+\begin{itemize}[leftmargin=*,itemsep=0.4cm]
+\item 8:00 – Optionale gemeinsame Meditation
+\item 8:30 – Gemeinsames Frühstück
+\item 9:30 – Individuelle Coaching-Sitzung
+\item 13:00 – Pranzo (Mittagessen)
+\item Ab 14:00 – Freie Zeit, Ausflüge, Abendessen
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Tag 5: Abschluss} \\
+Reflexion und Integration der Erfahrungen.
+\end{minipage}
+
+% Inside right - Coaching themes
+\begin{minipage}[t]{\linewidth}
+\sectiontitle{Coaching Themen}
+
+Im systemischen Coaching bearbeiten wir:
+
+\begin{itemize}[leftmargin=*,itemsep=0.3cm]
+\item \highlight{Burnout \& Prävention}
+\item \highlight{Self-Care} – Selbstfürsorge lernen
+\item \highlight{Grenzen ziehen} – Persönliche Grenzen setzen
+\item \highlight{Selbstannahme} – Sich selbst annehmen
+\item \highlight{Entscheidungsfindung} – Klarheit gewinnen
+\item \highlight{Selbstwertgefühl} – Den eigenen Wert stärken
+\item \highlight{Coping Strategien} – Bewältigungsstrategien
+\end{itemize}
+
+\vspace{0.3cm}
+\textit{Jede Person verfügt über Ressourcen, die im Coaching wieder entdeckt werden können.}
+\end{minipage}
+
+% Back page left - About
+\begin{minipage}[t]{\linewidth}
+\sectiontitle{Über mich}
+
+\textbf{Anja Heinicke} \\
+Systemische Therapeutin, Supervisorin \& Coach
+
+\vspace{0.3cm}
+Achtsamkeit, Akzeptanz und Wertschätzung bilden die Grundsäulen meiner Arbeit. Eine ressourcenorientierte Haltung ermöglicht es, verdeckte Stärken wieder zugänglich zu machen.
+
+\vspace{0.3cm}
+\includegraphics[width=0.6\textwidth]{../../assets/images/about-image.jpg}
+\end{minipage}
+
+% Back page right - Contact and practical info
+\begin{minipage}[t]{\linewidth}
+\sectiontitle{Kontakt \& Informationen}
+
+\begin{tabular}{@{}l@{}}
+\contactinfo{[E] Anja Heinicke} \\
+\contactinfo{anja.heinicke.coaching@gmail.com} \\
+\contactinfo{www.deine-wege-coaching.de} \\
+\\
+\contactinfo{[L] Ort:} Toskana, Italien \\
+\contactinfo{[D] Termin:} Frühjahr 2025 \\
+\contactinfo{[G] Gruppe:} Max. 4 Personen \\
+\contactinfo{[P] Preis:} Auf Anfrage \\
+\end{tabular}
+
+\vspace{0.5cm}
+\textbf{Zusätzliche Angebote:}
+\begin{itemize}[leftmargin=*,itemsep=0.3cm]
+\item Ausflüge an sehenswerte Orte
+\item Gemeinsame Meditationen
+\item Individuelle Aktivitäten
+\end{itemize}
+
+\vspace{0.5cm}
+\textit{Ich freue mich auf Ihre Nachricht!}
+\end{minipage}
+
+\end{document}

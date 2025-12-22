@@ -1,0 +1,146 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{qrcode}
+\usepackage{tikz}
+\usepackage{mdframed}
+
+% Font setup - fallback to standard fonts if Helvetica Neue not available
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault} % Use sans-serif as default
+
+% Enhanced Toskana color palette
+\definecolor{toskanaGreen}{HTML}{5F7A60}
+\definecolor{toskanaSand}{HTML}{E9DFC7}
+\definecolor{toskanaBrown}{HTML}{8A5A44}
+\definecolor{toskanaOlive}{HTML}{708238}
+\definecolor{toskanaCream}{HTML}{F5F1E8}
+
+% Custom commands for consistent styling
+\newcommand{\sectiontitle}[1]{\vspace{0.3cm}\textbf{\color{toskanaGreen}#1}\vspace{0.2cm}}
+\newcommand{\highlight}[1]{\textcolor{toskanaBrown}{\textbf{#1}}}
+
+\pagestyle{empty}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=toskanaBrown,
+    urlcolor=toskanaGreen
+}
+
+\begin{document}
+\pagecolor{toskanaCream}
+
+% Header with logo/title
+\begin{center}
+  \vspace{0.5cm}
+  {\Huge \color{toskanaGreen} \textbf{Coaching- \& Yoga-Retreat}}\\[0.3em]
+  {\large \color{toskanaBrown} \textit{Innehalten, auftanken, ausrichten}}\\[0.4em]
+  {\normalsize \color{toskanaOlive} Toskana · Elmo / Umgebung · Frühjahr 2025}
+\end{center}
+
+\vspace{0.8cm}
+
+% Main content in two columns
+\begin{minipage}[t]{0.55\textwidth}
+  \sectiontitle{Worum es geht}
+
+  Ein Retreat für Menschen, die erschöpft sind, an einem Wendepunkt stehen
+  oder sich nach mehr Klarheit und innerer Ausrichtung sehnen.
+  In einer kleinen Gruppe von 4–8 Personen schaffen wir Raum für Stille, Reflexion
+  und neue Perspektiven inmitten der toskanischen Landschaft.
+
+  \vspace{0.6cm}
+  \sectiontitle{Inhalte}
+
+  \begin{itemize}[leftmargin=*,itemsep=0.3em]
+    \item Systemisches Coaching in der Kleingruppe
+    \item Yoga- und Achtsamkeitssequenzen (sanft, für alle Levels)
+    \item Zeiten der Stille und meditative Naturgänge
+    \item Reflexionsübungen zu Lebens- und Arbeitsthemen
+    \item Gemeinsame Mahlzeiten im privaten Haus
+    \item Bewusste digitale Auszeiten
+    \item Individuelle Coaching-Gespräche
+  \end{itemize}
+
+  \vspace{0.6cm}
+  \sectiontitle{Für wen}
+
+  Für Menschen, die:
+  \begin{itemize}[leftmargin=*,itemsep=0.3em]
+    \item sich ausgebrannt oder überlastet fühlen,
+    \item wichtige Entscheidungen vorbereiten oder neu ausrichten möchten,
+    \item sich eine Auszeit mit professioneller Begleitung wünschen,
+    \item ihre innere Ruhe und Klarheit wiederfinden wollen.
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+
+  \vspace{0.4cm}
+
+  % Info box with enhanced styling
+  \begin{mdframed}[
+    linecolor=toskanaBrown,
+    backgroundcolor=toskanaSand,
+    linewidth=1pt,
+    roundcorner=5pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt
+  ]
+    \sectiontitle{Rahmen}
+
+    \textbf{Ort:} Privates Haus in der südlichen Toskana (Elmo / Umgebung)\\
+    \textbf{Gruppe:} 4–8 Personen (maximal)\\
+    \textbf{Dauer:} 5 Tage / 4 Nächte\\[0.3em]
+
+    \textbf{Investition (Beispiel):}\\
+    \highlight{Coaching-Paket:} 600 € p.P.\\
+    \highlight{Halbpension DZ:} 400 € p.P.\\
+    \highlight{EZ-Zuschlag:} 100 €\\
+    \highlight{Transfer ab/bis Bahnhof:} 100 € gesamt (geteilt)\\
+    \textit{Optionale Verlängerungsnächte möglich.}
+  \end{mdframed}
+
+  \vspace{0.5cm}
+  \sectiontitle{Leitung}
+
+  \highlight{Anja Heinicke}\\
+  Systemische Therapeutin, Supervisorin \& Coach\\
+  Achtsamkeits- und ressourcenorientierte Arbeitsweise.\\
+  Spezialisiert auf Burnout-Prävention und Neuorientierung.
+
+  \vspace{0.5cm}
+  \sectiontitle{Kontakt}
+
+  Unverbindliches Vorgespräch (20–30 Min.) möglich.\\[0.3em]
+  E-Mail: \href{mailto:anja.heinicke.coaching@gmail.com}{\texttt{anja.heinicke.coaching@gmail.com}}\\[0.2em]
+  Website: \href{https://www.deine-wege-coaching.de}{\texttt{www.deine-wege-coaching.de}}
+
+  \vspace{0.3cm}
+  % QR Code for website
+  \begin{center}
+    \qrcode[height=2cm]{https://www.deine-wege-coaching.de}
+    \vspace{0.2cm}
+    {\scriptsize Website QR-Code}
+  \end{center}
+\end{minipage}
+
+% Footer
+\vspace{1cm}
+\begin{center}
+  \hrulefill\\
+  \vspace{0.3cm}
+  {\small \color{toskanaOlive} "Die äußere Ruhe der Natur hilft Ihnen, Ihre innere Ruhe zu finden."}
+\end{center}
+
+\end{document}
