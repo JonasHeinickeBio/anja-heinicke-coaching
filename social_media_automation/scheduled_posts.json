@@ -1,0 +1,30 @@
+{
+  "scheduled_posts": [
+    {
+      "content_type": "text",
+      "schedule": "Monday 09:00",
+      "platforms": ["facebook", "linkedin"],
+      "content": {
+        "text": "Neue Woche, neue Möglichkeiten! 🌟 Starte mit Klarheit und Selbstfürsorge in die Woche. #Coaching #Selfcare #Neuorientierung"
+      }
+    },
+    {
+      "content_type": "image",
+      "schedule": "Wednesday 15:00",
+      "platforms": ["instagram", "facebook"],
+      "content": {
+        "image_path": "/path/to/retreat/image.jpg",
+        "caption": "Unser nächstes Retreat in der Toskana! 🇮🇹 5 Tage Coaching in der Natur, Zeit für dich selbst und Neuorientierung. Melde dich jetzt an! #Retreat #Coaching #Toskana"
+      }
+    },
+    {
+      "content_type": "link",
+      "schedule": "Friday 17:00",
+      "platforms": ["facebook", "linkedin"],
+      "content": {
+        "url": "https://anjaheinicke.de/retreat.html",
+        "text": "Entdecke unsere Coaching-Retreats in der Toskana. Perfekt für Frauen in der Lebensmitte, die sich neu orientieren möchten. 🌿"
+      }
+    }
+  ]
+}
