@@ -28,7 +28,7 @@ class FacebookPoster(BasePoster):
         try:
             import facebook
             
-            self.graph = facebook.GraphAPI(access_token=self.access_token, version="3.1")
+            self.graph = facebook.GraphAPI(access_token=self.access_token, version="18.0")
             
             # Test authentication by getting page info
             self.graph.get_object(id=self.page_id)

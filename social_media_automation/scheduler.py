@@ -134,6 +134,17 @@ class PostScheduler:
     
     def setup_schedules(self):
         """Setup all scheduled posts with the scheduler."""
+        # Day mapping for schedule setup
+        day_mapping = {
+            'monday': schedule.every().monday,
+            'tuesday': schedule.every().tuesday,
+            'wednesday': schedule.every().wednesday,
+            'thursday': schedule.every().thursday,
+            'friday': schedule.every().friday,
+            'saturday': schedule.every().saturday,
+            'sunday': schedule.every().sunday
+        }
+        
         for post_config in self.scheduled_posts:
             schedule_str = post_config.get('schedule', '')
             
@@ -152,22 +163,11 @@ class PostScheduler:
                 day, time_str = parts
                 day_lower = day.lower()
                 
-                if day_lower == 'monday':
-                    schedule.every().monday.at(time_str).do(self.execute_post, post_config)
-                elif day_lower == 'tuesday':
-                    schedule.every().tuesday.at(time_str).do(self.execute_post, post_config)
-                elif day_lower == 'wednesday':
-                    schedule.every().wednesday.at(time_str).do(self.execute_post, post_config)
-                elif day_lower == 'thursday':
-                    schedule.every().thursday.at(time_str).do(self.execute_post, post_config)
-                elif day_lower == 'friday':
-                    schedule.every().friday.at(time_str).do(self.execute_post, post_config)
-                elif day_lower == 'saturday':
-                    schedule.every().saturday.at(time_str).do(self.execute_post, post_config)
-                elif day_lower == 'sunday':
-                    schedule.every().sunday.at(time_str).do(self.execute_post, post_config)
-                
-                self.logger.info(f"Scheduled weekly post on {day} at {time_str}")
+                if day_lower in day_mapping:
+                    day_mapping[day_lower].at(time_str).do(self.execute_post, post_config)
+                    self.logger.info(f"Scheduled weekly post on {day} at {time_str}")
+                else:
+                    self.logger.warning(f"Unknown day: {day}. Skipping schedule.")
     
     def run(self):
         """Run the scheduler continuously."""

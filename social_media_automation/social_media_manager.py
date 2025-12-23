@@ -103,16 +103,30 @@ class SocialMediaManager:
         Returns:
             Dict containing results from all platforms
         """
-        if platforms:
-            # Filter posters to only specified platforms
-            original_posters = self.posters
-            self.posters = {k: v for k, v in self.posters.items() if k in platforms}
+        # Use filtered posters if platforms specified
+        posters_to_use = {k: v for k, v in self.posters.items() if k in platforms} if platforms else self.posters
         
-        results = self.post_to_all('text', text=text)
+        results = {
+            'overall_success': True,
+            'platforms': {}
+        }
         
-        if platforms:
-            # Restore original posters
-            self.posters = original_posters
+        for platform_name, poster in posters_to_use.items():
+            try:
+                result = poster.post_text(text)
+                results['platforms'][platform_name] = result
+                
+                if not result.get('success', False):
+                    results['overall_success'] = False
+                
+            except Exception as e:
+                self.logger.error(f"Error posting to {platform_name}: {str(e)}")
+                results['platforms'][platform_name] = {
+                    'success': False,
+                    'platform': platform_name,
+                    'error': str(e)
+                }
+                results['overall_success'] = False
         
         return results
     
@@ -129,14 +143,30 @@ class SocialMediaManager:
         Returns:
             Dict containing results from all platforms
         """
-        if platforms:
-            original_posters = self.posters
-            self.posters = {k: v for k, v in self.posters.items() if k in platforms}
+        # Use filtered posters if platforms specified
+        posters_to_use = {k: v for k, v in self.posters.items() if k in platforms} if platforms else self.posters
         
-        results = self.post_to_all('image', image_path=image_path, caption=caption)
+        results = {
+            'overall_success': True,
+            'platforms': {}
+        }
         
-        if platforms:
-            self.posters = original_posters
+        for platform_name, poster in posters_to_use.items():
+            try:
+                result = poster.post_image(image_path, caption)
+                results['platforms'][platform_name] = result
+                
+                if not result.get('success', False):
+                    results['overall_success'] = False
+                
+            except Exception as e:
+                self.logger.error(f"Error posting to {platform_name}: {str(e)}")
+                results['platforms'][platform_name] = {
+                    'success': False,
+                    'platform': platform_name,
+                    'error': str(e)
+                }
+                results['overall_success'] = False
         
         return results
     
@@ -153,14 +183,30 @@ class SocialMediaManager:
         Returns:
             Dict containing results from all platforms
         """
-        if platforms:
-            original_posters = self.posters
-            self.posters = {k: v for k, v in self.posters.items() if k in platforms}
+        # Use filtered posters if platforms specified
+        posters_to_use = {k: v for k, v in self.posters.items() if k in platforms} if platforms else self.posters
         
-        results = self.post_to_all('link', url=url, text=text)
+        results = {
+            'overall_success': True,
+            'platforms': {}
+        }
         
-        if platforms:
-            self.posters = original_posters
+        for platform_name, poster in posters_to_use.items():
+            try:
+                result = poster.post_link(url, text)
+                results['platforms'][platform_name] = result
+                
+                if not result.get('success', False):
+                    results['overall_success'] = False
+                
+            except Exception as e:
+                self.logger.error(f"Error posting to {platform_name}: {str(e)}")
+                results['platforms'][platform_name] = {
+                    'success': False,
+                    'platform': platform_name,
+                    'error': str(e)
+                }
+                results['overall_success'] = False
         
         return results
     

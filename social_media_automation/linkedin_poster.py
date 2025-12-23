@@ -73,7 +73,7 @@ class LinkedInPoster(BasePoster):
             
             # Prepare post data
             post_data = {
-                "author": self.person_urn or "urn:li:person:CURRENT",
+                "author": self.person_urn,
                 "lifecycleState": "PUBLISHED",
                 "specificContent": {
                     "com.linkedin.ugc.ShareContent": {
@@ -87,6 +87,10 @@ class LinkedInPoster(BasePoster):
                     "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
                 }
             }
+            
+            # Validate person URN is configured
+            if not self.person_urn:
+                raise ValueError("LinkedIn person URN not configured. Please set LINKEDIN_PERSON_URN in .env file.")
             
             # Post to LinkedIn
             response = requests.post(
@@ -154,9 +158,13 @@ class LinkedInPoster(BasePoster):
             # Apply rate limiting
             self.apply_rate_limit()
             
+            # Validate person URN is configured
+            if not self.person_urn:
+                raise ValueError("LinkedIn person URN not configured. Please set LINKEDIN_PERSON_URN in .env file.")
+            
             # Prepare post data with link
             post_data = {
-                "author": self.person_urn or "urn:li:person:CURRENT",
+                "author": self.person_urn,
                 "lifecycleState": "PUBLISHED",
                 "specificContent": {
                     "com.linkedin.ugc.ShareContent": {
