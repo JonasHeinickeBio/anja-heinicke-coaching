@@ -3,10 +3,18 @@
 Example script demonstrating how to use the social media automation system.
 """
 
+import sys
+import os
+
+# Add parent directory to path when running from social_media_automation directory
+if __name__ == "__main__":
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if parent_dir not in sys.path:
+        sys.path.insert(0, parent_dir)
+
 from social_media_automation.social_media_manager import SocialMediaManager
 from social_media_automation.scheduler import PostScheduler
 from social_media_automation.config import Config
-import sys
 
 
 def example_manual_post():
@@ -103,7 +111,8 @@ def main():
     
     # Check if .env file exists
     from pathlib import Path
-    env_file = Path(__file__).parent / 'social_media_automation' / '.env'
+    script_dir = Path(__file__).parent
+    env_file = script_dir / '.env'
     
     if not env_file.exists():
         print("\n⚠️  WARNING: .env file not found!")
