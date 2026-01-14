@@ -1676,6 +1676,10 @@ li {
         grid-template-columns: 1fr;
     }
 
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
     .faq-grid {
         grid-template-columns: 1fr;
     }
